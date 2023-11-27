@@ -1,0 +1,36 @@
+#Resimicin {
+    background-image: url(dogaresmi.jpg);
+    background-size: cover;
+    padding: 1px;
+    color: var(--label-flight-text-color);
+}
+
+#flight-Choose {
+    margin: 0px auto 0 auto;
+    width: 65%;
+}
+
+#label {
+    margin: 100px 0 100px 0;
+}
+
+.secimler {
+    background-color: var(--secimler-button-background-color);
+    border-radius: 6%;
+    border: 0px solid var(--secimler-button-background-color);
+}
+
+.pasif {
+    display: none;
+}
+
+.aktif {
+    display: unset;
+}
+
+.secimDiv{
+    display:block;
+    width:100%;
+    background-color:var(--secimler-div-background-color);
+    color:var(--secimler-div-text-color);
+}

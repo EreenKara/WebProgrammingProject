@@ -1,48 +1,67 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+﻿
+#headerdiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 15px 5px 15px;
+    background-color: var(--navbar-background-color);
+    color: var(--header-text-color);
+    font-size: 15px;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
 
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+#Navigation {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+    padding: 10px 0 10px 0;
 }
 
 a {
-  color: #0077cc;
+    text-decoration: none !important;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+a:hover {
+    cursor: pointer;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.navPart a {
+    color: var(--header-text-color);
+    transition: 0.7s;
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    .navPart a:hover {
+        color: var(--link-hover-color);
+    }
+
+#LogoAndName {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+#ErenAirlinesimage {
+    width:50px !important;
 }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+footer {
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+footer a {
+    color: var(--header-text-color);
+    transition: 0.7s;
+}
+
+footer a:hover {
+    color: var(--link-hover-color);
 }

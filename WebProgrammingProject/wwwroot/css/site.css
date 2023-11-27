@@ -1,18 +1,28 @@
 html {
   font-size: 14px;
 }
-
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
 }
-
 html {
   position: relative;
   min-height: 100%;
 }
 
-body {
-  margin-bottom: 60px;
+:root {
+    --header-text-color: white;
+    --label-flight-text-color: white;
+    --secimler-button-background-color:white;
+    --secimler-div-background-color:white;
+    --secimler-div-text-color:black;
+    --link-hover-color: black;
+    --navbar-background-color:grey;
+}
+* {
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box !important;
 }
