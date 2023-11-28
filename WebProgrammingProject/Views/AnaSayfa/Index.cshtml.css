@@ -20,17 +20,44 @@
     border: 0px solid var(--secimler-button-background-color);
 }
 
+.secimDiv {
+    display: block;
+    width: 100%;
+    height: 300px;
+    background-color: var(--secimler-div-background-color);
+    color: var(--secimler-div-text-color);
+}
+
 .pasif {
     display: none;
 }
 
 .aktif {
-    display: unset;
+    display: block;
 }
 
-.secimDiv{
-    display:block;
-    width:100%;
-    background-color:var(--secimler-div-background-color);
-    color:var(--secimler-div-text-color);
+.form-div {
+    width: 19%;
+    height: 60px;
+}
+.form-div input {
+    height: 55px;
+}
+
+.form-div label {
+    position: relative;
+    bottom: -40px;
+    left: 15px;
+    font-size:20px;
+    pointer-events: none; /*labela týklamamak için yaptým*/
+    transition: 0.3s linear 0ms;
+}
+
+
+#ucus-guzergahi {
+    background-color: black;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+    gap: 1%;
 }

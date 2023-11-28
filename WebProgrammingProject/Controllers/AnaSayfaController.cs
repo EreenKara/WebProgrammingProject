@@ -8,5 +8,9 @@ namespace WebProgrammingProject.Controllers
         {
             return View();
         }
+        public IActionResult Fonk()
+        {
+            return View();
+        }
     }
 }
