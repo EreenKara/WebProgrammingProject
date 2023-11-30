@@ -1,45 +1,19 @@
-const secim1Div = document.getElementById("secim1Div");
-const secim2Div = document.getElementById("secim2Div");
-const secim1 = document.getElementById("secim1");
-const secim2 = document.getElementById("secim2");
+const OneWayDiv= document.getElementById("OneWayDiv");
+const RoundDiv = document.getElementById("RoundDiv");
+const OneWay = document.getElementById("OneWay");
+const RoundTrip = document.getElementById("RoundTrip");
 
-secim1.onclick = secim1iac;
-secim2.onclick = secim2iac;
+OneWay.onchange = radioSecim;
+RoundTrip.onchange = radioSecim;
 
-function secim1iac() {
-    secim1Div.style.display = "block"
-    secim2Div.style.display = "none";
-}
-function secim2iac() {
-    secim2Div.style.display = "block";
-    secim1Div.style.display = "none";
-}
-
-
-const neredenLabel = document.getElementById("neredenLabel");
-const nereden = document.getElementById("nereden");
-
-
-
-
-
-
-nereden.onfocus = Focusta(neredenLabel);
-nereden.onblur = LoseFocusta(neredenLabel);
-
-// Wrapper fonksiyon
-function Focusta(eleman) {
-    function wrapper() {
-        eleman.style.fontSize = "12px";
-        eleman.style.bottom = "-20px";
+function radioSecim() {
+    if (OneWay.checked) {
+        OneWayDiv.style.display = "block"
+        RoundDiv.style.display = "none";
     }
-
-    return wrapper;
-}
-function LoseFocusta(eleman) {
-    function wrapper() {
-        eleman.style.fontSize= "20px";
-        eleman.style.bottom = "-40px";
+    else if (RoundTrip.checked) {
+        RoundDiv.style.display = "block";
+        OneWayDiv.style.display = "none";
     }
-    return wrapper;
 }
+

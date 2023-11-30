@@ -5,33 +5,26 @@
             <h2>Hello</h2>
             <h2>Where do you want to explore</h2>
         </div>
-        <div>
+        <div id="secimlerDiv">
             <button id="secim1" class="secimler">flight</button>
             <button id="secim2" class="secimler">Check-in</button>
         </div>
-        <div id="secim1Div" class="secimDiv aktif">
+        <div class="secim1Div">
             <div id="ucus-tipi">
                 <input id="OneWay" type="radio" name="flight-type" value="OneWay" checked/><label>OneWay</label>
                 <input  id="RoundTrip" type="radio" name="flight-type" value="RoundTrip"/><label>Round Trip</label>
             </div>
-            <form id="ucus-guzergahi"  method="post">
-                <div id="neredenDiv" class="form-div">
-                    <label id="neredenLabel">From</label>
-                    <input class="form-control" id="nereden" type="text" />
-                </div>
-                <div class="form-div">
-                    <label></label>
-                    <input class="form-control" id="nereye" type="text"/>
-                </div>
-                <div class="form-div">
-                    <input class="form-control" type="date"/>
-                </div>
-                <div class="form-div">
-                    <input class="form-control" type="number" />
-                </div>
-            </form>
+
+            <div id="OneWayDiv" class="secimDiv aktif">
+                <partial name="~/Views/Shared/Partials/Form_FromTo.cshtml" />
+            </div>
+            <div id="RoundDiv" class="secimDiv pasif">
+                <partial name="~/Views/Shared/Partials/Form_FromToRound.cshtml" />
+            </div>
         </div>
-        <div id="secim2Div" class="secimDiv pasif">Bazi secimler ancak bu sadece ve sadece secilince gozukecek</div>
+        <div class="secim2Div">
+            
+        </div>
     </section>
 </div>
 

@@ -1,0 +1,43 @@
+.form-div {
+    width: 19%;
+    height: 60px;
+}
+
+.form-div input {
+    height: 55px;
+}
+
+.form-div label {
+    position: relative;
+    top: 40px;
+    left: 13px;
+    font-size: 20px;
+    pointer-events: none; /*labela týklamamak için yaptým*/
+    transition: 0.3s linear 0ms;
+}
+
+#form {
+    margin: 0px 10px 0 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1%;
+}
+.kucuk-label {
+    top: 25px !important;
+    font-size: 12px !important;
+    z-index:5;
+}
+.kucuk-label-input{
+    position:relative;
+    top:6px;
+
+}
+#form-button input {
+    position: relative;
+    top: 30px;
+}
+.off {
+    visibility: hidden;
+}
+
