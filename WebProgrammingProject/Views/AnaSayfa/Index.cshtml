@@ -19,8 +19,12 @@
                 <partial name="~/Views/Shared/Partials/Form_FromTo.cshtml" />
             </div>
             <div id="RoundDiv" class="secimDiv pasif">
+                @*bunu burdan kaldırmak lazım onun yerine 
+                    üsttekine eklenmesi gerekenleri js ile aşağı ekle
+                *@
                 <partial name="~/Views/Shared/Partials/Form_FromToRound.cshtml" />
             </div>
+            
         </div>
         <div class="secim2Div">
             
@@ -28,6 +32,7 @@
     </section>
 </div>
 
+<partial name="~/Views/Shared/Partials/AirPlaneSchema.cshtml">
 
 @section Scripts{
         <script src="../Views/AnaSayfa/Index.cshtml.js"></script>

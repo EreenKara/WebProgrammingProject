@@ -15,6 +15,7 @@ function Focusta(eleman) {
 }
 function LoseFocusta(eleman) {
     function wrapper() {
+        
         eleman.style.fontSize = "20px";
         eleman.style.top="40px";
     }
