@@ -16,13 +16,16 @@
             </div>
 
             <div id="OneWayDiv" class="secimDiv aktif">
-                <partial name="~/Views/Shared/Partials/Form_FromTo.cshtml" />
+                @{
+                    ViewBag.Round = false;
+                }
+                <partial name="~/Views/Shared/Partials/Form.cshtml" />
             </div>
             <div id="RoundDiv" class="secimDiv pasif">
-                @*bunu burdan kaldırmak lazım onun yerine 
-                    üsttekine eklenmesi gerekenleri js ile aşağı ekle
-                *@
-                <partial name="~/Views/Shared/Partials/Form_FromToRound.cshtml" />
+                @*@{
+                    ViewBag.Round = true;
+                }
+                <partial name="~/Views/Shared/Partials/Form.cshtml" />*@
             </div>
             
         </div>
