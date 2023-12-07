@@ -1,0 +1,43 @@
+#headerdiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 15px 5px 15px;
+    background-color: var(--navbar-background-color);
+    color: var(--header-text-color);
+    font-size: 15px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    
+}
+
+#Navigation {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+    padding: 10px 0 10px 0;
+}
+
+.navPart a {
+    color: var(--header-text-color);
+    transition: 0.7s;
+}
+
+.navPart a:hover {
+    color: var(--link-hover-color);
+}
+
+#LogoAndName {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#ErenAirlinesimage {
+    width:50px !important;
+}

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace EntityLayer.Concrete
 {
     // Her bir Entity'nin acces modifier'ı public olmak zorunda.
-    internal class Adult
+    public class Adult
     {
     }
 }

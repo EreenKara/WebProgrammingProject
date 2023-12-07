@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    internal class AirPlane
+    // Her bir Entity'nin acces modifier'ı public olmak zorunda.
+    public class AirPlane
     {
     }
 }

@@ -2,7 +2,7 @@
 
 .plane {
   margin: 20px auto;
-  max-width: 300px;
+  max-width: 250px;
 }
 
 .cockpit {
@@ -69,20 +69,21 @@ ol {
 }
 
 .seats {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;  
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
 }
 .seat {
     display: flex;
     flex: 0 0 14.28571428571429%;
-    padding: 5px;
+    padding: 4px;
     position: relative;
 }
-.seat:nth-child(3) {
-    margin-right: 14.28571428571429%;
+.seat:nth-child(2) {
+    margin-right: 30%;
 }
+
 .seat input[type=checkbox] {
     position: absolute;
     opacity: 0;
@@ -119,11 +120,12 @@ ol {
     font-size: 14px;
     font-weight: bold;
     line-height: 1.5rem;
-    padding: 4px 0;
+    padding: 4px 0px;
     background: #F42536;
     border-radius: 5px;
     animation-duration: 300ms;
     animation-fill-mode: both;
+    width:35px;
 }
 .seat label:before {
     content: "";

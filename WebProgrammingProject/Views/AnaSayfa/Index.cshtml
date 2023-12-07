@@ -6,36 +6,40 @@
             <h2>Where do you want to explore</h2>
         </div>
         <div id="secimlerDiv">
-            <button id="secim1" class="secimler">flight</button>
+            <button id="secim1" class="secimler">Flight</button>
             <button id="secim2" class="secimler">Check-in</button>
         </div>
-        <div class="secim1Div">
-            <div id="ucus-tipi">
-                <input id="OneWay" type="radio" name="flight-type" value="OneWay" checked/><label>OneWay</label>
-                <input  id="RoundTrip" type="radio" name="flight-type" value="RoundTrip"/><label>Round Trip</label>
-            </div>
+        <div class="secimlerBackground">
+            <div class="secim1Div">
+                <div id="ucus-tipi">
+                    <input id="OneWay" type="radio" name="flight-type" value="OneWay" checked/><label>OneWay</label>
+                    <input  id="RoundTrip" type="radio" name="flight-type" value="RoundTrip"/><label>Round Trip</label>
+                </div>
 
-            <div id="OneWayDiv" class="secimDiv aktif">
-                @{
-                    ViewBag.Round = false;
-                }
-                <partial name="~/Views/Shared/Partials/Form.cshtml" />
-            </div>
-            <div id="RoundDiv" class="secimDiv pasif">
-                @*@{
-                    ViewBag.Round = true;
-                }
-                <partial name="~/Views/Shared/Partials/Form.cshtml" />*@
-            </div>
+                <div id="OneWayDiv" class="secimDiv aktif">
+                    @{
+                        ViewBag.Round = false;
+                    }
+                    <partial name="~/Views/Shared/Partials/FormPartial.cshtml" />
+                </div>
+                <div id="RoundDiv" class="secimDiv pasif">
+                    @*@{
+                        ViewBag.Round = true;
+                    }
+                    <partial name="~/Views/Shared/Partials/Form.cshtml" />*@
+                </div>
             
-        </div>
-        <div class="secim2Div">
+            </div>
+            <div class="secim2Div">
             
+            </div>
         </div>
     </section>
 </div>
 
-<partial name="~/Views/Shared/Partials/AirPlaneSchema.cshtml">
+@*<partial name="~/Views/Shared/Partials/Ucaklar/A321NEOPartial.cshtml">
+<partial name="~/Views/Shared/Partials/Ucaklar/A350-900Partial.cshtml">
+<partial name="~/Views/Shared/Partials/Ucaklar/B737-800Partial.cshtml">*@
 
 @section Scripts{
         <script src="../Views/AnaSayfa/Index.cshtml.js"></script>

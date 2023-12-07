@@ -11,38 +11,15 @@
     <link rel="stylesheet" href="~/WebProgrammingProject.styles.scss" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <div id="headerdiv">
-            <div id="LogoAndName">
-                <img id="ErenAirlinesimage" src="./ErenAirlines.png" alt="Logo">
-                <span>Eren's AirLines</span>
-            </div>
-            <nav>
-                <div id="Navigation">
-                    <div class="navPart"><a id="ozel" href="">Plan&Book</a></div>
-                    <div class="navPart"><a>FlyDifferent</a></div>
-                    <div class="navPart"><a>Discover</a></div>
-                    <div class="navPart"><a>Signup</a></div>
-                    <div class="navPart"><a>Signin</a></div>
-                </div>
-            </nav>
-        </div>
-    </header>
 
+    <partial name="~/Views/Shared/LayoutPartials/HeaderPartial.cshtml" />
 
     <main role="main">
             @RenderBody()
     </main>
 
-    <footer>
-        <div id="social-medias">
-            <a href="https://www.instagram.com/eeer.eeen"><i id="instagram-logo"  class="fa fa-brands fa-instagram fa-2x"></i></a>
-            <a href="https://github.com/EreenKara"><i id="github-logo" class="fa fa-brands fa-github fa-2x"></i></a>
-        </div>
-        <address>Sakarya/Serdivan</address>
-        <p>All Copyrights are Reserved by Eren</p>
-    </footer>
-    <script src=""></script>
+    <partial name="~/Views/Shared/LayoutPartials/FooterPartial.cshtml" />
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

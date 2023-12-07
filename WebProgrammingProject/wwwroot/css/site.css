@@ -14,15 +14,23 @@ html {
 :root {
     --header-text-color: white;
     --label-flight-text-color: white;
-    --secimler-button-background-color:white;
-    --secimler-div-background-color:white;
-    --secimler-div-text-color:black;
+    --secimler-button-background-color: rgb(245,245,245);
+    --secimler-div-background-color: white;
+    --secimler-div-text-color: black;
     --link-hover-color: black;
-    --navbar-background-color:grey;
+    --navbar-background-color: rgb(30,60,40);
 }
 * {
     font-family:  "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     margin: 0px;
     padding: 0px;
     box-sizing: border-box !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+a:hover {
+    cursor: pointer;
 }
