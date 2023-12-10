@@ -1,0 +1,61 @@
+﻿@using EntityLayer.Concrete
+@model Flight
+<div class="formDiv">
+    <partial name="~/Views/Shared/Partials/FormPartial.cshtml" />
+</div>
+
+<div class="ucus-gunleri">
+
+</div>
+
+<div class="ucuslar">
+    <div class="ucuslar-header">
+
+    </div>
+    <div class="listeleme">
+        <ol>
+            @for(int i =0;i < 10;i++){
+                <li class="ucus">
+                    <div class="ucus-detaylari shadow-ben ">
+                        <div class="cizgi">
+                            <div class="kalkis-location">
+                                <p class="kalkis-saati font-weight-bold">12:00</p>
+                                <p class="kalkis-havalimani-kodu">IST</p>
+                                <p class="kalkis-sehri">Istanbul</p>
+                            </div>
+                            <div class="yol-fotograf"></div>
+                            <div class="inis-location">
+                                <p class="inis-saati font-weight-bold">13:00</p>
+                                <p class="inis-havalimani-kodu">BRLN</p>
+                                <p class="inis-sehri">Berlin</p>
+                            </div>
+                        </div>
+                        <p class="ucak-tipi">Aircraft: Buraya ucagin ismini yaz</p>
+                    </div>
+                    <div class="economy flex-kolon shadow-ben">
+                            <p class="ucustipi-header font-weight-bold">Economy</p>
+                        <div class="flex-satir">
+                            <input class="form-check-input" type="radio" name="secim" value=""/>
+                            <div class="flex-kolon">
+                                <p>per person</p>
+                                <p class="fiyat  font-weight-bold">1200TL</p>
+                                <p class="uyari">Uyari</p>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="business flex-kolon shadow-ben">
+                        <p class="ucustipi-header font-weight-bold">Business</p>
+                        <div class="flex-satir">
+                            <input class="form-check-input" type="radio" name="secim" value=""/>
+                            <div class="flex-kolon">
+                                <p>per person</p>
+                                <p class="fiyat font-weight-bold">1200TL</p>
+                                <p class="uyari">Uyari</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ol>
+    </div>
+</div>

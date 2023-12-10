@@ -1,4 +1,5 @@
-﻿@model Person
+﻿@using EntityLayer.Concrete
+@model Person
 <div id="Resimicin">
     <section id="flight-Choose" role="region" aria-labelledby="label-flightChoose">
         <div id="label">
@@ -17,9 +18,6 @@
                 </div>
 
                 <div id="OneWayDiv" class="secimDiv aktif">
-                    @{
-                        ViewBag.Round = false;
-                    }
                     <partial name="~/Views/Shared/Partials/FormPartial.cshtml" />
                 </div>
                 <div id="RoundDiv" class="secimDiv pasif">

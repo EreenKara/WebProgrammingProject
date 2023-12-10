@@ -1,0 +1,89 @@
+p {
+    margin: 0;
+}
+ol{
+    padding:0;
+}
+.formDiv {
+    height: 120px;
+    margin-bottom:30px;
+    background-color: var(--ucus-listeleme-background);
+    padding: 0 15%;
+   
+}
+.font-weight-bold{
+    font-weight:700;
+}
+.ucuslar{
+    width:70%;
+    margin:20px auto ;
+}
+
+.listeleme {
+    background-color: var(--ucus-listeleme-background);
+    border:1px solid rgba(30,30,30,0.2);
+}
+
+li {
+    list-style: none;
+}
+
+.ucus {
+    padding: 10px 10px 10px 10px;
+    margin: 5px 5px 5px 5px;
+    display: grid;
+    grid-template-columns: 60% 1fr 1fr;
+    gap: 10px;
+}
+.ucus-detaylari {
+    background-color: var(--ucus-listeleme-economy-business-background);
+    padding: 10px 20px 5px 20px;
+}
+.cizgi {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width:80%;
+    margin-bottom:5px;
+    padding:5px 0px;
+}
+input[type=radio]{
+    width:30px;
+    height:30px;
+}
+.economy {
+    background-color: var(--ucus-listeleme-economy-business-background);
+}
+.ucustipi-header {
+    padding: 5px 10px 5px 10px;
+}
+.economy > .ucustipi-header {
+    background-color:var(--ucus-listeleme-economy);
+}
+.business> .ucustipi-header {
+    background-color: var(--ucus-listeleme-business);
+}
+.business {
+    background-color: var(--ucus-listeleme-economy-business-background);
+}
+.flex-kolon {
+    display: flex;
+    flex-direction: column;
+}
+.flex-satir {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10%;
+    padding: 5px 10px 20px 10px;
+}
+.shadow-ben {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.05) !important;
+}
+
+.shadow-ben:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.2) !important;
+}
+.cizgi{
+    border-bottom:1px dashed black;
+}

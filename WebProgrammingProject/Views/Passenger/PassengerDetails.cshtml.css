@@ -1,0 +1,46 @@
+.passenger-information {
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    
+}
+.baslik{
+    
+    margin:20px 0;
+}
+section[role="form"] {
+    background-color: var(--information-form);
+}
+.information{
+    background-color:white;
+    margin-bottom:10px;
+    padding:1px;
+}
+.contact {
+    background-color: white;
+    margin-bottom: 60px;
+    padding: 1px;
+}
+.inputlar {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 300px 300px;
+    grid-column-gap: 2%;
+    grid-row-gap: 20px;
+    padding: 10px 20px;
+    align-items: center;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right:5px;
+}
+.inputlar>.radio-buttonlar{
+    position:relative;
+    top:15px;
+}
+.form-baslik {
+    box-shadow: 0 4px 8px rgba(0,0,0,.16);
+}
