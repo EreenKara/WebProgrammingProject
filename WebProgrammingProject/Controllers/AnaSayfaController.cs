@@ -2,6 +2,7 @@
 
 namespace WebProgrammingProject.Controllers
 {
+    // [AllowAnonymous]
     public class AnaSayfaController : Controller
     {
         public IActionResult Index()
@@ -11,6 +12,7 @@ namespace WebProgrammingProject.Controllers
         }
         public IActionResult Fonk()
         {
+            
             return View();
         }
         public IActionResult DropDown() 

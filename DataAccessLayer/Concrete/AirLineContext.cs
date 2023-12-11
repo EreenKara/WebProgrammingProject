@@ -1,4 +1,5 @@
 ﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete
 {
-    public class AirLineContext:DbContext
+    // Identity kütüphanesini kullandığımız için aşağıdaki context'ten kalıttım.
+    public class AirLineContext:IdentityDbContext<User,Role,int>
     {
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Adult> Adults { get; set; }
@@ -29,6 +31,9 @@ namespace DataAccessLayer.Concrete
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Airport>().HasAlternateKey(k => k.AirportCode); //Unique yaptım
+            modelBuilder.Entity<Person>().ToTable("Persons");
+            modelBuilder.Entity<Adult>().ToTable("Adults");
+            modelBuilder.Entity<Child>().ToTable("Childs");
 
         }
     }

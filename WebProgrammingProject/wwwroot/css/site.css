@@ -1,10 +1,11 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+    scroll-behavior: smooth;
 }
 @media (min-width: 768px) {
-  html {
+html {
     font-size: 16px;
-  }
+}
 }
 html {
   position: relative;

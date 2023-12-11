@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    // Her bir entity için bir tane interface tanımlama ve aşağıdaki gibi yap
-    public interface IAdultDal:IGenericDal<Adult>
+    public interface IChildDal:IGenericDal<Child>
     {
     }
 }

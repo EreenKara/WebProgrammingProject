@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,35 +11,35 @@ namespace BusinessLayer.Concrete
 {
     public class AdultManager : IAdultService
     {
-        IAdultService _service;
-        public AdultManager(IAdultService service)
+        private IAdultDal _adultDal;
+        public AdultManager(IAdultDal adultDal)
         {
-            _service = service;
+            _adultDal = adultDal;
         }
 
         public void Add(Adult entity)
         {
-            _service.Add(entity);
+            _adultDal.Add(entity);
         }
 
         public void Delete(Adult entity)
         {
-            _service.Delete(entity);
+            _adultDal.Delete(entity);
         }
 
         public Adult GetById(int id)
         {
-            throw new NotImplementedException();
+            return _adultDal.GetByID(id);
         }
 
         public List<Adult> GetList()
         {
-            return _service.GetList();
+            return _adultDal.GetList();
         }
 
         public void Update(Adult entity)
         {
-            _service.Update(entity);
+            _adultDal.Update(entity);
         }
     }
 }
