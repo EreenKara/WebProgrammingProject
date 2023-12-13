@@ -12,7 +12,7 @@ namespace DataAccessLayer.Concrete
     // Identity kütüphanesini kullandığımız için aşağıdaki context'ten kalıttım.
     public class AirLineContext:IdentityDbContext<User,Role,int>
     {
-        public DbSet<Account> Accounts { get; set; }
+        //public DbSet<Account> Accounts { get; set; }
         public DbSet<Adult> Adults { get; set; }
         public DbSet<Airplane> Airplanes { get; set; }
         public DbSet<Airport> Airports{ get; set; }

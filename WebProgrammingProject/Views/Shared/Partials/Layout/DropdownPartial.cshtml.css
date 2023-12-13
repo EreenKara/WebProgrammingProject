@@ -1,29 +1,4 @@
-﻿
-
-body {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 1.4;
-    color: #fff;
-    background-color: #1f2029;
-    overflow-x: hidden;
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
-    background-position: center;
-    background-repeat: repeat;
-    background-size: 4%;
-    width: 100%;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-pack: center;
-    justify-content: center;
-    padding-top: 100px;
-    padding-bottom: 300px;
-}
-
-.sec-center {
+﻿.sec-center {
     position: relative;
     max-width: 100%;
     text-align: center;
@@ -41,6 +16,9 @@ body {
     display:flex;
     flex-direction:column;
     
+}
+label>.for-dropdown{
+    text-align:center;
 }
 .section-dropdown {
     position: absolute;
@@ -74,12 +52,12 @@ body {
     display: -ms-inline-flexbox;
     display: inline-flex;
     -webkit-align-items: center;
-    -moz-align-items: center;
-    -ms-align-items: center;
+/*    -moz-align-items: center;
+    -ms-align-items: center;*/
     align-items: center;
     -webkit-justify-content: center;
-    -moz-justify-content: center;
-    -ms-justify-content: center;
+/*    -moz-justify-content: center;
+    -ms-justify-content: center;*/
     justify-content: center;
     -ms-flex-pack: center;
     text-align: center;
@@ -97,6 +75,7 @@ body {
     .dropdown:checked + label:before,
     .dropdown:not(:checked) + label:before {
         position: fixed;
+        text-align: center;
         top: 0;
         left: 0;
         content: '';
@@ -111,11 +90,11 @@ body {
     pointer-events: auto;
 }
 
-.dropdown:not(:checked) + label .uil {
-    font-size: 24px;
-    margin-left: 10px;
-    transition: transform 200ms linear;
-}
+    .dropdown:not(:checked) + label .uil {
+        font-size: 24px;
+        margin-left: 10px;
+        transition: transform 200ms linear;
+    }
 
 .dropdown:checked + label .uil {
     transform: rotate(180deg);

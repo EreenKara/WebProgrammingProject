@@ -12,14 +12,16 @@ namespace EntityLayer.Concrete
     {
         [Key]
         public int ID { get; set; }
-        [Required]
-        [MaxLength(200)]
-        [Display(Name = "Airport Code")]
+        [Required(ErrorMessage ="AirportCode_Required_Error")]
+        [MaxLength(200,ErrorMessage ="AirportCode_Max_Length_Error")]
+        [Display(Name = "AirportCode")]
         //OnModelCreating tarafında bunu unique yaptım.
         public string AirportCode { get; set; } 
-        [Required]
+        [Required(ErrorMessage = "Country_Required_Error")]
+        [Display(Name = "Country")]
         public string Country { get; set; }
-        [Required]
+        [Required(ErrorMessage = "City_Required_Error")]
+        [Display(Name = "City")]
         public string City { get; set; }
 
 

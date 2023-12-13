@@ -34,8 +34,6 @@ h1 {
     padding: 2rem;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
 }
 
 .login-container form input {
@@ -54,8 +52,8 @@ h1 {
     backdrop-filter: blur(15px);
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+/*    -ms-border-radius: 5px;
+    -o-border-radius: 5px;*/
 }
 
     .login-container form input:focus {
@@ -81,11 +79,11 @@ h1 {
     border: none;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+/*    -ms-border-radius: 5px;
+    -o-border-radius: 5px;*/
     -webkit-transition: all 0.1s ease-in-out;
     -moz-transition: all 0.1s ease-in-out;
-    -ms-transition: all 0.1s ease-in-out;
+    /*-ms-transition: all 0.1s ease-in-out;*/
     -o-transition: all 0.1s ease-in-out;
 }
 
@@ -105,8 +103,8 @@ h1 {
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+/*    -ms-border-radius: 50%;
+    -o-border-radius: 50%;*/
     position: absolute;
 }
 

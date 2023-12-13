@@ -18,9 +18,10 @@
     flex-wrap: nowrap;
     gap: 15px;
     padding: 10px 0 10px 0;
+    align-items:center; 
 }
 
-.navPart a {
+.navPart a:current{
     color: var(--header-text-color);
     transition: 0.7s;
 }
@@ -28,7 +29,11 @@
 .navPart a:hover {
     color: var(--link-hover-color);
 }
-
+#language-select{
+    font-size:2px!important;
+    text-align:center!important;
+    width:50px;
+}
 #LogoAndName {
     display: flex;
     flex-direction: row;

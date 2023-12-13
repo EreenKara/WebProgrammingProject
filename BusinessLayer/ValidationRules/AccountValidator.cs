@@ -12,7 +12,7 @@ namespace BusinessLayer.ValidationRules
     {
         public AccountValidator()
         {
-
+            
         }
     }
 }

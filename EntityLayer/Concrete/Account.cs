@@ -8,21 +8,20 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    public class Account
+    public class Account // bu sınıf sadece ve sadece
     {
-        [Key]
-        public int ID { get; set; }
+        
         [Required]
         [MinLength(8, ErrorMessage = "8 karakterden daha az sifre olamaz")]
         [MaxLength(30, ErrorMessage = "30 karakterden daha fazla sifre olamaz")]
+
         public string Password { get; set; }
-        [Required]
-        public int Authority { get; set; }
 
 
-        [ForeignKey(nameof(Adult))]
-        public int AdultID { get; set; }// FK için key
-        public Adult Adult { get; set; } // FK için kolaylastirma
+
+        //[ForeignKey(nameof(Adult))]
+        //public int AdultID { get; set; }// FK için key
+        //public Adult Adult { get; set; } // FK için kolaylastirma
         
 
     }

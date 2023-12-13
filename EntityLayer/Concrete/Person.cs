@@ -12,14 +12,21 @@ namespace EntityLayer.Concrete
     {
         [Key]
         public int ID { get; set; }
-        [Required]
+        [Required(ErrorMessage ="FirstName_Required_Error")]
+        [Display(Name ="FirstName")]
         public string FirstName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "LastName_Required_Error")]
+        [Display(Name = "LastName")]
         public string LastName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "DateofBirth_Required_Error")]
+        [Display(Name = "DateofBirth")]
         public DateTime DateofBirth { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Gender_Required_Error")]
+        [Display(Name ="Gender")]
         public bool Gender { get; set; }
+        [Required(ErrorMessage = "Country_Required_Error")]
+        [Display(Name ="Country")]
+        public string Country { get; set; }
 
         public ICollection<Ticket> Tickets { get; set; }
 

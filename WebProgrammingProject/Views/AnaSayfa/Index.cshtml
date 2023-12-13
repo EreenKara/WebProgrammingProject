@@ -1,20 +1,21 @@
-﻿@using EntityLayer.Concrete
+﻿@using Microsoft.AspNetCore.Mvc.Localization;
+@inject IViewLocalizer localizer
 @model Person
 <div id="Resimicin">
     <section id="flight-Choose" role="region" aria-labelledby="label-flightChoose">
         <div id="label">
-            <h2>Hello</h2>
-            <h2>Where do you want to explore</h2>
+            <h2>@localizer["selam"]</h2>
+            <h4>@languageService.GetKey("Anasayfa.Index.Label")</h4>
         </div>
         <div id="secimlerDiv">
-            <button id="secim1" class="secimler">Flight</button>
-            <button id="secim2" class="secimler">Check-in</button>
+            <button id="secim1" class="secimler">@languageService.GetKey("Anasayfa.Index.Ucus")</button>
+            <button id="secim2" class="secimler">@languageService.GetKey("Anasayfa.Index.Kontrol")</button>
         </div>
         <div class="secimlerBackground">
             <div class="secim1Div">
                 <div id="ucus-tipi">
-                    <input id="OneWay" type="radio" name="flight-type" value="OneWay" checked/><label>OneWay</label>
-                    <input  id="RoundTrip" type="radio" name="flight-type" value="RoundTrip"/><label>Round Trip</label>
+                    <input id="OneWay" type="radio" name="flight-type" value="OneWay" checked/><label>@languageService.GetKey("Anasayfa.Index.TekYon")</label>
+                    <input  id="RoundTrip" type="radio" name="flight-type" value="RoundTrip"/><label>@languageService.GetKey("Anasayfa.Index.CiftYon")</label>
                 </div>
 
                 <div id="OneWayDiv" class="secimDiv aktif">

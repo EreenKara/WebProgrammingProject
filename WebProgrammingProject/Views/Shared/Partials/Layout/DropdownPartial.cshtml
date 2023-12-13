@@ -1,17 +1,15 @@
-﻿@using EntityLayer.Concrete
-@model Account
-<div class="sec-center"> 	
+﻿<div class="sec-center"> 	
 	
 	<input class="dropdown" type="checkbox" id="dropdown" name="dropdown"/>
-	<label class="for-dropdown" for="dropdown">Sign-in<i class="uil uil-arrow-down"></i></label>
+	<label class="for-dropdown" for="dropdown">@languageService.GetKey("Layout.Header.DropDown.Girisyap")<i class="uil uil-arrow-down"></i></label>
 	<div class="section-dropdown"> 
 		
 			<form asp-action="" asp-controller="">
 				<div class="sign-in-form">
 				<label >E-mail</label>
 				<input  type="email" />
-				<label asp-for="Password"></label>
-				<input asp-for="Password" type="password" />
+				<label ></label>
+				<input  type="password" />
 				</div>
 			</form>
 		
