@@ -10,13 +10,14 @@ namespace EntityLayer.Concrete
     public class ShoppingCart
     {
         public int ID { get; set; }
-        public double Total { get; set; }
-        [ForeignKey(nameof(Ticket))]
-        public int TicketID { get; set; }
-        public Ticket Ticket { get; set; }
+        public double TotalPrice { get; set; }
+        public ICollection<Ticket> Tickets { get; set; }
         [ForeignKey(nameof(WhoPaid))]
         public int WhoPaidID { get; set; }
         public Adult WhoPaid { get; set; }
-
+        public ShoppingCart()
+        {
+            Tickets=new HashSet<Ticket>();
+        }
     }
 }

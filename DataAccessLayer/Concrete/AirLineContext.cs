@@ -1,4 +1,5 @@
 ﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 namespace DataAccessLayer.Concrete
 {
     // Identity kütüphanesini kullandığımız için aşağıdaki context'ten kalıttım.
-    public class AirLineContext:IdentityDbContext<User,Role,int>
+    public class AirLineContext:IdentityDbContext<AppUser,AppRole,string>
     {
         //public DbSet<Account> Accounts { get; set; }
         public DbSet<Adult> Adults { get; set; }
@@ -25,16 +26,29 @@ namespace DataAccessLayer.Concrete
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=ErensAirlines;Trusted_Connection=True");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=ErensAirlines;Trusted_Connection=True;MultipleActiveResultSets=True");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Airport>().HasAlternateKey(k => k.AirportCode); //Unique yaptım
-            modelBuilder.Entity<Person>().ToTable("Persons");
-            modelBuilder.Entity<Adult>().ToTable("Adults");
-            modelBuilder.Entity<Child>().ToTable("Childs");
+            modelBuilder.Entity<Person>().ToTable("Persons"); // TPT 
+            modelBuilder.Entity<Adult>().ToTable("Adults"); // TPT
+            modelBuilder.Entity<Child>().ToTable("Childs"); // TPT
 
+            // for the other conventions, we do a metadata model loop
+            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+            {
+                // equivalent of modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+                // equivalent of modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+                entityType.GetForeignKeys()
+                    .Where(fk => !fk.IsOwnership && fk.DeleteBehavior == DeleteBehavior.Cascade)
+                    .ToList()
+                    .ForEach(fk => fk.DeleteBehavior = DeleteBehavior.Restrict);
+            }
+            
+            
         }
     }
 }

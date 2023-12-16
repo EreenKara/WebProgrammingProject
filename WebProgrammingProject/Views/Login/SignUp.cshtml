@@ -1,23 +1,98 @@
-﻿
+﻿@model UserRegisterViewModel
 
-<section class="container">
-    <div class="login-container">
-        <div class="circle circle-one"></div>
-        <div class="form-container">
-            <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" class="illustration" />
-            <h1 class="opacity">LOGIN</h1>
-            <form>
-                <input type="text" placeholder="E-MAIL" />
-                <input type="password" placeholder="PASSWORD" />
-                <button class="opacity">SUBMIT</button>
-            </form>
-            <div class="register-forget opacity">
-                <a href="">REGISTER</a>
-                <a href="">FORGOT PASSWORD</a>
+
+@section Css{
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+}
+
+<style>
+.registration-form .item {
+        border-radius: 20px;
+        margin-bottom: 25px;
+        padding: 10px 20px;
+    }
+</style>
+
+
+<h3>@TempData["Error"]</h3>
+
+<div class="registration-form">
+    <form asp-action="SignUp" asp-controller="Login">
+        <div class="formdiv">
+            <div class="form-icon">
+                <span><i class="icon icon-user"></i></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Adult.FirstName"></label>
+                <input class="form-control" style="border-radius: 20px;padding: 10px 20px;" asp-for="@Model.Adult.FirstName"/>
+                <span class="text-danger" asp-validation-for="@Model.Adult.FirstName"></span>
+            </div>
+            <div class="form-group" >
+                <label asp-for="@Model.Adult.LastName"></label>
+                <input class="form-control" style="border-radius: 20px;padding: 10px 20px;" asp-for="@Model.Adult.LastName"/>
+                <span class="text-danger" asp-validation-for="@Model.Adult.LastName"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Adult.Email"></label>
+                <input class="form-control" type="email" style="border-radius: 20px;padding: 10px 20px;" asp-for="@Model.Adult.Email"/>
+                <span class="text-danger" asp-validation-for="@Model.Adult.Email"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="@Model.Account.UserName"></label>
+                <input class="form-control" type="email" style="border-radius: 20px;padding: 10px 20px;" asp-for="@Model.Account.UserName"/>
+                <span class="text-danger" asp-validation-for="@Model.Account.UserName"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="@Model.Account.Password"></label>
+                <input class="form-control" type="password" style="border-radius: 20px;padding: 10px 20px;" asp-for="@Model.Account.Password"/>
+                <span class="text-danger" asp-validation-for="@Model.Account.Password"></span>
+            </div>
+            <div class="text-danger" asp-validation-summary="ModelOnly">
+
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Account.ConfirmPassword"></label>
+                <input class="form-control" type="password" style="border-radius: 20px;padding: 10px 20px;" asp-for="@Model.Account.ConfirmPassword"/>
+                <span class="text-danger" asp-validation-for="@Model.Account.ConfirmPassword"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Adult.Phone"></label>
+                <input id="phone-number" type="tel" class="form-control" style="border-radius: 20px;padding: 10px 20px;" asp-for="@Model.Adult.Phone"/>
+                <span class="text-danger" asp-validation-for="@Model.Adult.Phone"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Adult.DateofBirth"></label>
+                <input id="birth-date" class="form-control" style="border-radius: 20px;padding: 10px 20px;" asp-for="@Model.Adult.DateofBirth"/>
+                <span class="text-danger" asp-validation-for="@Model.Adult.DateofBirth"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="@Model.Adult.Country"></label>
+                <input class="form-control" style="border-radius: 20px;padding: 10px 20px;" asp-for="@Model.Adult.Country"/>
+                <span class="text-danger" asp-validation-for="@Model.Adult.Country"></span>
+            </div>*@
+            <div class="form-group">
+                <div style="display:flex; gap:10px; flex-direction:row;align-items:center;">
+                    <div style="display:flex; flex-direction:row;align-items:center;"><input type="radio" id="MR." class="form-check"  asp-for="Adult.Gender" value="true"/><label>MR.</label></div>
+                    <div style="display:flex; flex-direction:row;align-items:center;"><input type="radio" id="MS." class="form-check"  asp-for="Adult.Gender" value="false"/><label>MS.</label></div>
+                    <span class="text-danger" asp-validation-for="@Model.Adult.Gender"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-block create-account">@languageService.GetKey("Login.SignUp.Button").Value</button>
             </div>
         </div>
-        <div class="circle circle-two"></div>
+    </form>
+    <div class="social-media">
+        <h5>@languageService.GetKey("Login.SignUp.SignupWithSocial").Value</h5>
+        <div class="social-icons">
+            <a href="#" ><i class="icon-social-facebook" title="Facebook"></i></a>
+            <a href="#"><i class="icon-social-google" title="Google"></i></a>
+            <a href="#"><i class="icon-social-twitter" title="Twitter"></i></a>
+        </div>
     </div>
-    <div class="theme-btn-container"></div>
-</section>
-<script src="../Views/Login/Index.cshtml.js"></script>
+</div>
+
+@section Scripts{
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="../Views/Login/SignUp.cshtml.js"></script>
+}

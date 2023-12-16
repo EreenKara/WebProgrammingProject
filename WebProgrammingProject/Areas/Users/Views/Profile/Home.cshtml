@@ -1,0 +1,44 @@
+﻿@using WebProgrammingProject.Areas.Users.Models;
+@model UserProfileViewModel
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Surname
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Phone
+            </th>
+            <th>
+                DateofBirth
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <label>@Model.Name</label>
+            </td>
+            <td>
+                <label>@Model.SurName</label>
+
+            </td>
+            <td>
+                <label>@Model.Email</label>
+            </td>
+            <td>
+                <label>@Model.Phone</label>
+            </td>
+            <td>
+                <label>@Model.DateofBirth</label>
+            </td>
+        </tr>
+    </tbody>
+</table>

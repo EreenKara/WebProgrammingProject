@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntityLayer.Concrete
+namespace WebProgrammingProject.Models
 {
     public class Account // bu sınıf sadece ve sadece View'lerde kullanılmak için var
     {
@@ -15,16 +15,16 @@ namespace EntityLayer.Concrete
         [Required(ErrorMessage ="Password_Required_Error")]
         [MinLength(8, ErrorMessage = "Password_Min_Length_Error")]
         [MaxLength(30, ErrorMessage = "Password_Min_Length_Error")]
-        [Compare("ConfirmPassword",ErrorMessage = "Password_Compare_Error")]
         [Display(Name ="Password")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
         [Required(ErrorMessage = "ConfirmPassword_Required_Error")]
         [MinLength(8, ErrorMessage = "ConfirmPassword_Min_Length_Error")]
         [MaxLength(30, ErrorMessage = "ConfirmPassword_Max_Length_Error")]
         [Compare("Password",ErrorMessage = "ConfirmPassword_Compare_Error")]
         [Display(Name ="ConfirmPassword")]
+        [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
-        
 
 
         //[ForeignKey(nameof(Adult))]

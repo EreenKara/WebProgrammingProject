@@ -18,18 +18,18 @@ namespace EntityLayer.Concrete
         public string Model { get; set; }
         [Required(ErrorMessage = "RowSeatNumberEconomy_Required_Error")]
         [Display(Name ="RowSeatNumberEconomy")]
-        public int RowSeatNumberEconomy { get; set; }
+        public string RowSeatNumberEconomy { get; set; }
         [Required(ErrorMessage = "ColumnSeatNumberEconomy_Required_Error")]
         [Display(Name = "ColumnSeatNumberEconomy")]
-        public int ColumnSeatNumberEconomy { get; set; }
+        public string ColumnSeatNumberEconomy { get; set; }
         [Required(ErrorMessage = "RowSeatNumberBusiness_Required_Error")]
         [Display(Name = "RowSeatNumberBusiness")]
-        public int RowSeatNumberBusiness { get; set; }
+        public string RowSeatNumberBusiness { get; set; }
         [Required(ErrorMessage = "ColumnSeatNumberBusiness_Required_Error")]
         [Display(Name = "ColumnSeatNumberBusiness")]
-        public int ColumnSeatNumberBusiness { get; set; }
-
-        public ICollection<Flight> Flights { get; set; }
+        public string ColumnSeatNumberBusiness { get; set; }
+        
+        public ICollection<Flight>? Flights { get; set; }
 
         public Airplane()
         {

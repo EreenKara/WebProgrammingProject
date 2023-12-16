@@ -1,17 +1,20 @@
-﻿<div class="sec-center"> 	
+﻿@using Microsoft.Extensions.Localization;
+@inject IStringLocalizer<Account> localizerAccount
+
+<div class="sec-center"> 	
 	
 	<input class="dropdown" type="checkbox" id="dropdown" name="dropdown"/>
 	<label class="for-dropdown" for="dropdown">@languageService.GetKey("Layout.Header.DropDown.Girisyap")<i class="uil uil-arrow-down"></i></label>
 	<div class="section-dropdown"> 
-		
-			<form asp-action="" asp-controller="">
-				<div class="sign-in-form">
-				<label >E-mail</label>
-				<input  type="email" />
-				<label ></label>
-				<input  type="password" />
-				</div>
-			</form>
-		
+		<form asp-action="Login" asp-controller="Login" asp-area="">
+			<div class="sign-in-form">
+				<label @localizerAccount["Email"] >@localizerAccount["Email"]</label>
+				<input name="Email" type="email" placeholder="@localizerAccount["Email"]"/>
+				<label >@localizerAccount["Password"]</label>
+				<input name="Password" placeholder="@localizerAccount["Password"]" type="password" />
+				<button type="submit">@languageService.GetKey("Layout.Header.DropDown.Girisyap").Value</button>
+				<a asp-action="Login" asp-controller="Login" asp-area="">Login</a>
+			</div>
+		</form>
 	</div>
 </div>

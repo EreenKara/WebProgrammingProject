@@ -1,0 +1,131 @@
+﻿
+@{
+
+    List<int> satirEconomy = new List<int>();
+    List<int> sutunEconomy = new List<int>();
+    List<int> satirBusiness= new List<int>();
+    List<int> sutunBusiness= new List<int>();
+    int siraNumarasi = 0;
+    int sutunNumarasi = 0;
+
+    satirEconomy.Add(5);
+    satirEconomy.Add(5);
+    sutunEconomy.Add(2);
+    sutunEconomy.Add(3);
+    sutunEconomy.Add(3);
+    satirBusiness.Add(4);
+    satirBusiness.Add(4);
+    sutunBusiness.Add(2);
+    sutunBusiness.Add(2);
+    sutunBusiness.Add(2);
+
+    int olcum1 = 0;
+    int olcum2 = 0;
+    foreach (var satirsayisi in satirEconomy)
+    {
+        olcum1 += satirsayisi;
+    }
+    foreach (var satirsayisi in satirBusiness)
+    {
+        olcum2 += satirsayisi;
+    }
+    int buyuk = Math.Max(olcum1, olcum2);
+    int ucakGenislik = buyuk * 35;// kac px genisliginde olacak onu hesapliyorum.
+    ucakGenislik = ucakGenislik + 20; // padding
+    ucakGenislik += 100;  // koltukların satır aralarında bosluk olması icin bırakmam gerekn bosluk var bunu buraya vericem
+
+
+
+}
+
+
+<style>
+    .plane{
+          max-width: @(ucakGenislik)px;
+    }
+</style>
+
+<div class="plane">
+    <div class="cockpit">
+        <h1>B737-800</h1>
+    </div>
+    <div class="koltuklar">
+        <div class="exit exit--front fuselage">
+
+        </div>
+
+        <ol class="cabin fuselage economy">
+            <h5 class="text-center">Economy</h5>
+        @foreach (int satir in satirEconomy)
+        {
+        <div class="satir-ayrim">
+            @for (int i = 0; i < satir; i++)
+            {
+                siraNumarasi++;
+                <li class="row row--@(siraNumarasi)">
+                <ol class="seats" type="A">
+                @foreach (int sutun in sutunEconomy)
+                {
+                    <div class="sutun-ayrim sutun-ayrim-economy">
+                        @for (int j = 0; j < sutun; j++)
+                        {
+                            sutunNumarasi++;
+                            <li class="seat ">
+                                <input type="checkbox" id="@(siraNumarasi)@((char)(64+sutunNumarasi))">
+                                <label class="seat-economy" for="@(siraNumarasi)@((char)(64+sutunNumarasi))">@(siraNumarasi)@((char)(64 + sutunNumarasi))</label>
+                            </li>
+                        }
+                    </div>
+                }
+                </ol>
+                </li>
+                sutunNumarasi = 0;
+
+            }
+        </div>
+        }
+        
+        </ol>
+        <ol class="cabin fuselage economy">
+            <h5 class="text-center">Business</h5>
+            @foreach (int satir in satirBusiness)
+            {
+                <div class="satir-ayrim">
+                    @for (int i = 0; i < satir; i++)
+                    {
+                        siraNumarasi++;
+                        <li class="row row--@(siraNumarasi)">
+                        <ol class="seats" type="A">
+                        @foreach (int sutun in sutunBusiness)
+                        {
+                            <div class="sutun-ayrim sutun-ayrim-business">
+                                @for (int j = 0; j < sutun; j++)
+                                {
+                                    sutunNumarasi++;
+                                    <li class="seat ">
+                                        <input type="checkbox" id="@(siraNumarasi)@((char)(64+sutunNumarasi))">
+                                        <label class="seat-business" for="@(siraNumarasi)@((char)(64+sutunNumarasi))">@(siraNumarasi)@((char)(64 + sutunNumarasi))</label>
+                                    </li>
+                                }
+                            </div>
+                        }
+                        </ol>
+                        </li>
+                        sutunNumarasi = 0;
+
+                    }
+                </div>
+            }
+        
+        </ol>
+
+    </div>
+</div>
+
+
+
+
+
+@*  <div class="exit exit--back fuselage">
+
+  </div>*@

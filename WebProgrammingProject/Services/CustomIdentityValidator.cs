@@ -10,7 +10,7 @@ using EntityLayer;
 using Microsoft.Extensions.Localization;
 using WebProgrammingProject.Services;
 
-namespace BusinessLayer.ValidationRules
+namespace WebProgrammingProject.Services
 {
     public class CustomIdentityValidator:IdentityErrorDescriber
     {

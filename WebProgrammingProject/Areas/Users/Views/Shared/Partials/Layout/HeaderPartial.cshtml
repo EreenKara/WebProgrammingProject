@@ -1,0 +1,60 @@
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Localization;
+@using Microsoft.Extensions.Options
+
+@inject IOptions<RequestLocalizationOptions> LocOptions
+@{
+    string returnUrl = ViewContext.HttpContext.Request.Path;
+
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var cultureItems = LocOptions.Value.SupportedUICultures
+        .Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
+        .ToList();
+
+}
+
+<style>
+    .navPart a 
+    {
+        color: var(--header-text-color);
+        transition: 0.7s;
+    }
+    .navPart a:hover 
+    {
+        color: var(--link-hover-color);
+    }
+</style>
+<header>
+    <div id="headerdiv">
+        <div id="LogoAndName">
+            <img id="ErenAirlinesimage"  src="./Photos/ErenAirlines.png" alt="Logo">
+            <span>Eren's AirLines</span>
+        </div>
+        <nav>
+            <div id="Navigation">
+                <div class="navPart"><a asp-action="Index" asp-controller="Anasayfa">@languageService.GetKey("Layout.Header.Anasayfa")</a></div>
+                <div class="navPart"><a asp-action="SignIn" asp-controller="Login" >@languageService.GetKey("Layout.Header.Kayıtol")</a></div>
+                <div class="navPart"><partial name="~/Views/Shared/Partials/Layout/DropdownPartial.cshtml" ></div>
+                <div class="navPart">  
+                    <div id="language-select">
+                        <form asp-action="ChangeLanguage" asp-controller="Anasayfa" method="post">
+
+                            <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
+
+                            <select id="culture"
+                                name="culture"
+                                class="form-control"
+                                onchange="this.form.submit();"
+                                asp-items="@cultureItems"
+                                asp-for="@requestCulture.RequestCulture.UICulture.Name">
+                                
+                            </select>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>

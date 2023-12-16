@@ -153,20 +153,50 @@
   <data name="FormPartial.Yolcu" xml:space="preserve">
     <value>Passenger Count</value>
   </data>
+  <data name="HandleUsers.EditRole.Error" xml:space="preserve">
+    <value>Searched Role Cannot Found</value>
+  </data>
+  <data name="HandleUsers.EditUsersInRole.Error" xml:space="preserve">
+    <value>Searched Role Cannot Found</value>
+  </data>
+  <data name="HandleUsers.EditUsersInRole.Error_AddingProblem" xml:space="preserve">
+    <value>While adding user a problem come out</value>
+  </data>
   <data name="Layout.Header.Anasayfa" xml:space="preserve">
     <value>Home</value>
   </data>
   <data name="Layout.Header.DropDown.Girisyap" xml:space="preserve">
-    <value>SignUp</value>
+    <value>Login</value>
   </data>
   <data name="Layout.Header.Kayıtol" xml:space="preserve">
     <value>SignIn</value>
   </data>
-  <data name="Login.SignIn.Button" xml:space="preserve">
+  <data name="Login.Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Login.Login.Error" xml:space="preserve">
+    <value>Wrong email or password</value>
+  </data>
+  <data name="Login.Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Login.Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Login.SignUp.Button" xml:space="preserve">
     <value>Create Account</value>
   </data>
-  <data name="Login.SignIn.SignupWithSocial" xml:space="preserve">
+  <data name="Login.SignUp.Error" xml:space="preserve">
+    <value>User already exist.</value>
+  </data>
+  <data name="Login.SignUp.Error_RoleCannotFound" xml:space="preserve">
+    <value>Role cannot be found</value>
+  </data>
+  <data name="Login.SignUp.SignupWithSocial" xml:space="preserve">
     <value>Sign up With Social Media</value>
+  </data>
+  <data name="Login.Submit" xml:space="preserve">
+    <value>Submit</value>
   </data>
   <data name="Services.PasswordRequiresLower" xml:space="preserve">
     <value>Password must include at least 1 lower character.</value>
@@ -179,5 +209,8 @@
   </data>
   <data name="Services.PasswordTooShort" xml:space="preserve">
     <value>Password must be at least 8 character.</value>
+  </data>
+  <data name="SignUp.ForgotPassword" xml:space="preserve">
+    <value>Forgot Password</value>
   </data>
 </root>

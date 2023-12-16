@@ -153,6 +153,15 @@
   <data name="FormPartial.Yolcu" xml:space="preserve">
     <value>Yolcu Sayısı</value>
   </data>
+  <data name="HandleUsers.EditRole.Error" xml:space="preserve">
+    <value>Aranan Rol Bulunamadı</value>
+  </data>
+  <data name="HandleUsers.EditUsersInRole.Error" xml:space="preserve">
+    <value>Aranan Rol Bulunamadı</value>
+  </data>
+  <data name="HandleUsers.EditUsersInRole.Error_AddingProblem" xml:space="preserve">
+    <value>Kullanıcıyı eklerken hata oluştu</value>
+  </data>
   <data name="Layout.Header.Anasayfa" xml:space="preserve">
     <value>Anasayfa</value>
   </data>
@@ -162,11 +171,35 @@
   <data name="Layout.Header.Kayıtol" xml:space="preserve">
     <value>Kayıt Ol</value>
   </data>
-  <data name="Login.SignIn.Button" xml:space="preserve">
+  <data name="Login.ForgotPassword" xml:space="preserve">
+    <value>Parolamı Unuttum</value>
+  </data>
+  <data name="Login.Login" xml:space="preserve">
+    <value>Giriş Yap</value>
+  </data>
+  <data name="Login.Login.Error" xml:space="preserve">
+    <value>Hatalı şifre ya da email</value>
+  </data>
+  <data name="Login.Password" xml:space="preserve">
+    <value>Şifre</value>
+  </data>
+  <data name="Login.Register" xml:space="preserve">
+    <value>Kayıt ol</value>
+  </data>
+  <data name="Login.SignUp.Button" xml:space="preserve">
     <value>Hesap Oluştur</value>
   </data>
-  <data name="Login.SignIn.SignupWithSocial" xml:space="preserve">
+  <data name="Login.SignUp.Error" xml:space="preserve">
+    <value>Email zaten kayıtlı.</value>
+  </data>
+  <data name="Login.SignUp.Error_RoleCannotFound" xml:space="preserve">
+    <value>Role bulunamadı</value>
+  </data>
+  <data name="Login.SignUp.SignupWithSocial" xml:space="preserve">
     <value>Sosyal Medya ile Giriş Yap</value>
+  </data>
+  <data name="Login.Submit" xml:space="preserve">
+    <value>Gönder</value>
   </data>
   <data name="Services.PasswordRequiresLower" xml:space="preserve">
     <value>Şifre en az 1 tane küçük harf içermeli.</value>

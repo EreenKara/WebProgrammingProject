@@ -6,6 +6,9 @@ footer {
     padding:15px;
     font-size:18px;
     font-weight:600;
+    position:absolute;
+    width:100%;
+    bottom:0px;
 }
 
 footer a {

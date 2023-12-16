@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebProgrammingProject.Controllers
@@ -8,6 +10,8 @@ namespace WebProgrammingProject.Controllers
     {
         public IActionResult PassengerDetails()
         {
+            
+
             return View();
         }
     }

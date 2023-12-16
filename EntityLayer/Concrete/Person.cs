@@ -24,9 +24,6 @@ namespace EntityLayer.Concrete
         [Required(ErrorMessage = "Gender_Required_Error")]
         [Display(Name ="Gender")]
         public bool Gender { get; set; }
-        [Required(ErrorMessage = "Country_Required_Error")]
-        [Display(Name ="Country")]
-        public string Country { get; set; }
 
         public ICollection<Ticket> Tickets { get; set; }
 

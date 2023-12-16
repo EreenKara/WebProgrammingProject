@@ -11,6 +11,7 @@ namespace EntityLayer.Concrete
     {
         public int ID { get; set; }
         public string SeatNumber { get; set; }
+        public string FlightType { get; set; }
         public double Price { get; set; }
         [ForeignKey(nameof(Flight))]
         public int FlightID { get; set; }
@@ -18,5 +19,8 @@ namespace EntityLayer.Concrete
         [ForeignKey(nameof(Person))]
         public int PersonID { get; set; }
         public Person Person { get; set; } // People
+        [ForeignKey(nameof(ShoppingCart))]
+        public int ShoppingCartID { get; set; }
+        public ShoppingCart ShoppingCart { get; set; }
     }
 }

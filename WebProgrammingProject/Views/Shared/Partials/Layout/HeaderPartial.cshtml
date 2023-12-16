@@ -1,8 +1,7 @@
-﻿@using Microsoft.AspNetCore.Builder
-@using Microsoft.AspNetCore.Localization
-@using Microsoft.Extensions.Localization;
-@using Microsoft.Extensions.Options
-
+﻿
+@*Burada Appuser'dan generic almalıyz çünkü o sınıfa göre giriş çıkış yapacağız*@
+@inject SignInManager<AppUser> signInManager 
+@inject RoleManager<AppRole> roleManager
 @inject IOptions<RequestLocalizationOptions> LocOptions
 @{
     string returnUrl = ViewContext.HttpContext.Request.Path;
@@ -11,9 +10,20 @@
     var cultureItems = LocOptions.Value.SupportedUICultures
         .Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
         .ToList();
+
 }
 
-
+<style>
+    .navPart a ,#logout
+    {
+        color: var(--header-text-color);
+        transition: 0.7s;
+    }
+    .navPart a:hover 
+    {
+        color: var(--link-hover-color);
+    }
+</style>
 <header>
     <div id="headerdiv">
         <div id="LogoAndName">
@@ -22,12 +32,45 @@
         </div>
         <nav>
             <div id="Navigation">
-                <div class="navPart"><a asp-action="Index" asp-controller="Anasayfa">@languageService.GetKey("Layout.Header.Anasayfa")</a></div>
-                <div class="navPart"><a asp-action="SignIn" asp-controller="Login" >@languageService.GetKey("Layout.Header.Kayıtol")</a></div>
-                <div class="navPart"><partial name="~/Views/Shared/Partials/Layout/DropdownPartial.cshtml"></div>
+                <div class="navPart"><a asp-action="Index" asp-controller="Anasayfa" asp-area="">@languageService.GetKey("Layout.Header.Anasayfa")</a></div>
+                
+                
+                @*Asagidaki User parametresi RazorPage'ler tarafından otomatik olarak bizlere sağlanıyor*@
+                @*Biz herhangi bir işlem ypamadık RazoBase property'si olarak var*@
+                @*Bizlere ClaimsPrincipal olarak sağlıyor.*@
+                @if (signInManager.IsSignedIn(User))
+                {
+                    <div class="navPart">
+                        <a asp-action="Home" asp-controller="Profile" asp-area="Users">Pofile</a>
+                    </div>
+                    <div class="navPart">
+                        <form method="post" asp-action="Logout" asp-controller="Login" asp-area="">
+                                <button id="logout" type="submit" class="nav-link btn btn-link py-0" style="width:auto">
+                                    Logout @User.Identity.Name
+                                </button>
+                        </form>
+                    </div>
+                }
+                else
+                {
+                    <div class="navPart">
+                        <a asp-action="SignUp" asp-controller="Login" asp-area="">@languageService.GetKey("Layout.Header.Kayıtol")</a>
+                    </div>
+                    <div class="navPart">
+                        <partial name="~/Views/Shared/Partials/Layout/DropdownPartial.cshtml" >
+                    </div>
+                }
+                @if(signInManager.IsSignedIn(User) && User.IsInRole("Admin")){
+                    <div class="navPart">
+                        <a asp-action="Home" asp-controller="HandleUsers" asp-area="Admins">HandleUsers</a>
+                    </div>
+                    <div class="navPart">
+                        <a asp-action="Home" asp-controller="HandleFlight" asp-area="Admins">HandleFlights</a>
+                    </div>
+                }
                 <div class="navPart">  
                     <div id="language-select">
-                        <form asp-action="ChangeLanguage" asp-controller="Anasayfa" method="post">
+                        <form asp-action="ChangeLanguage" asp-controller="Anasayfa" asp-area="" method="post">
 
                             <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
 
@@ -35,7 +78,7 @@
                                 name="culture"
                                 class="form-control"
                                 onchange="this.form.submit();"
-                                asp-items="cultureItems"
+                                asp-items="@cultureItems"
                                 asp-for="@requestCulture.RequestCulture.UICulture.Name">
                                 
                             </select>
@@ -43,6 +86,7 @@
                         </form>
                     </div>
                 </div>
+                
             </div>
         </nav>
     </div>

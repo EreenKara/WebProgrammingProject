@@ -26,9 +26,8 @@ html {
     --information-form: rgba(220,220,230,0.4);
 }
 * {
-    font-family:  "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    margin: 0px;
-    padding: 0px;
+    font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
     box-sizing: border-box !important;
 }
 

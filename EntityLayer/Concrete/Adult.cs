@@ -24,11 +24,10 @@ namespace EntityLayer.Concrete
         public string Phone { get; set; }
 
 
-
-        [BindNever]
-        public User User { get; set; }
+        
+        public AppUser? User { get; set; }
         //public Account Account { get; set; }
-        public ICollection<Child> Childs { get; set; }  // FK çocukları var mı diye
+        public ICollection<Child>? Childs { get; set; }  // FK çocukları var mı diye
         public ICollection<ShoppingCart> ShoppingCarts { get; set; } // FK için bir kullanıcının birden fazla heasbı olabilir.
 
         public Adult()

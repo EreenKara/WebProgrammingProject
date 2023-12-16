@@ -14,8 +14,12 @@ namespace EntityLayer.Concrete
         public int ID { get; set; }
         [Required]
         public DateTime DepartureTime { get; set; }
+        [Required]
         public DateTime ArrivalTime { get; set; }
-
+        [Required]
+        public double EconomyPrice { get; set; }
+        [Required]
+        public double BusinessPrice { get; set; }
 
 
         public ICollection<Ticket> Tickets { get; set; }

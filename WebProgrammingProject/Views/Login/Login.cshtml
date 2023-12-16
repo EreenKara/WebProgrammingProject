@@ -1,0 +1,67 @@
+﻿@model LoginViewModel 
+
+@using Microsoft.Extensions.Localization;
+
+@inject IStringLocalizer<Adult> localizerAdult
+@inject IStringLocalizer<Account> localizerAccount
+
+    <style>
+        .login-container form input:focus 
+        {
+            box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.2);
+            animation: wobble 0.3s ease-in;
+            -webkit-animation: wobble 0.3s ease-in;
+        }
+        .login-container form input{
+            display: block;
+            padding: 14.5px;
+            width: 100%;
+            margin: 2rem 0;
+            color: #1a1a2e;
+            outline: none;
+            background-color: #9191911f;
+            border: none;
+            border-radius: 5px;
+            font-weight: 500;
+            letter-spacing: 0.8px;
+            font-size: 15px;
+            backdrop-filter: blur(15px);
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+        }
+        a {
+            text-decoration: none;
+            color: var(--color);
+        }
+        .register-forget > a {
+            color: var(--primary-color);
+        }
+    </style>
+
+
+    <h3>@TempData["Error"]</h3>
+
+<section class="container">
+    <div class="login-container">
+        <div class="circle circle-one"></div>
+        <div class="form-container">
+            <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" class="illustration" />
+            <h1 class="opacity">@languageService.GetKey("Login.Login").Value</h1>
+            <form asp-action="Login" asp-controller="Login" asp-area="">
+                <input asp-for="Email" type="email" placeholder="@localizerAdult["Email"].Value" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+                <input asp-for="Password" type="password"  placeholder="@localizerAccount["Password"].Value" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+                <div asp-validation-summary="ModelOnly"></div>
+                <button type="submit" class="opacity">@languageService.GetKey("Login.Submit").Value</button>
+            </form>
+            <div class="register-forget opacity">
+                <a asp-action="SignUp" asp-controller="Login" asp-area="">@languageService.GetKey("Login.Register").Value</a>
+                <a asp-action="" asp-controller="" asp-area="">@languageService.GetKey("Login.ForgotPassword").Value</a>
+            </div>
+        </div>
+        <div class="circle circle-two"></div>
+    </div>
+    <div class="theme-btn-container"></div>
+</section>
+<script src="../Views/Login/Login.cshtml.js"></script>
