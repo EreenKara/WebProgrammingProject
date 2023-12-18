@@ -16,9 +16,16 @@ ol{
 }
 .ucuslar{
     width:70%;
-    margin:20px auto ;
+    margin-left: auto ;
+    margin-right:auto;
+    margin-top:20px;
+    margin-bottom:152px;
 }
-
+.btn-div {
+    padding: 1px;
+    width:80px;
+    margin: 10px auto;
+}
 .listeleme {
     background-color: var(--ucus-listeleme-background);
     border:1px solid rgba(30,30,30,0.2);

@@ -1,30 +1,28 @@
 ﻿@using WebProgrammingProject.ViewComponents.Models;
 @model EntityLayer.Concrete.Airplane
 
-<h4>Airplane</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    Airport ID :  @Model.ID
-                    RowSeatNumberEconomy : @Model.RowSeatNumberEconomy
-                    ColumnSeatNumberEconomy : @Model.ColumnSeatNumberEconomy
-                    RowSeatNumberBusiness : @Model.RowSeatNumberBusiness
-                    ColumnSeatNumberBusiness : @Model.ColumnSeatNumberBusiness
-                </div>
-                <div class="card-body flex-column">
-                    @await Component.InvokeAsync("Ucak",new UcakViewModel {airplane=Model,doluKoltuklar=null,flightType=null})
 
-                </div>
-                <div class="card-footer">
+<div class="ayar">
+    <h4 class="text-center">Airplane</h4>
+    <div class="card">
+        <div class="card-header kart-header">
+            <div class="card-title">Airport ID :  @Model.ID</div>
+            <div class="card-title">RowSeatNumberEconomy : @Model.RowSeatNumberEconomy</div>
+            <div class="card-title">ColumnSeatNumberEconomy : @Model.ColumnSeatNumberEconomy</div>
+            <div class="card-title">RowSeatNumberBusiness : @Model.RowSeatNumberBusiness</div>
+            <div class="card-title">ColumnSeatNumberBusiness : @Model.ColumnSeatNumberBusiness</div>
+        </div>
+        <div class="card-body flex-column">
+            @await Component.InvokeAsync("Ucak",new UcakViewModel {airplane=Model,doluKoltuklar=null,flightType=null})
+        </div>
+        <div class="card-footer">
 
-                </div>
-            </div>
-        
+        </div>
     </div>
 </div>
 
+
 <div>
-    <a asp-action="ListAirplanes">Back to List</a>
+    <a class="btn btn-primary" style="margin-top:20px;" asp-action="ListAirplanes">Back to List</a>
 </div>

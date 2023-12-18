@@ -1,8 +1,6 @@
 ﻿@model IEnumerable<EntityLayer.Concrete.Airplane>
 
-<p>
-    <a asp-action="CreateAirplane">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -43,7 +41,7 @@
                 @Html.DisplayFor(modelItem => item.ColumnSeatNumberBusiness)
             </td>
             <td>
-                <a asp-action="ShowAirplane" asp-route-id="@item.ID">Show Airplane</a> |
+                <a class="btn btn-primary" asp-action="ShowAirplane" asp-route-id="@item.ID">Show Airplane</a>
             </td>
         </tr>
 }

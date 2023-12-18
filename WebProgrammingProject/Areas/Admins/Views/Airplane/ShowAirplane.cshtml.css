@@ -1,0 +1,9 @@
+.ayar{
+    width:80%;
+    margin:20px auto 152px auto;
+}
+.kart-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

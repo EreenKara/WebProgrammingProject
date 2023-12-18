@@ -7,8 +7,11 @@
             <th>Ucus Ekonomi ücreti</th>
             <th>Ucus Business ücreti</th>
             <th>Ucus Ucak modeli</th>
-            <th>Ucus KAlkış havalimanı</th>
+            <th>Ucus Kalkış havalimanı</th>
             <th>Ucus iniş havalimanı</th>
+            <th>Ucus kalkış saati</th>
+            <th>UCus iniş saati</th>
+            <th>Ucus'a ait biletler</th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +24,22 @@
                 <td>@ucus.Airplane.Model</td>
                 <td>@ucus.DepartureAirport.AirportCode</td>
                 <td>@ucus.ArrivalAirport.AirportCode</td>
+                <td>@ucus.DepartureTime</td>
+                <td>@ucus.ArrivalTime</td>
+                <td>
+                    <details>
+                        <summary>Dolu Koltuklar</summary>
+                        <div class="biletler">
+                            @foreach (var bilet in ucus.Tickets)
+                            {
+                                <div class="bilet">
+                                    <p>@bilet.FlightType</p>
+                                    <p>@bilet.SeatNumber</p>
+                                </div>
+                            }
+                        </div>
+                    </details>
+                </td>
             </tr>
         }
     </tbody>

@@ -8,8 +8,8 @@
         <div class="baslik">
             <h2>Passenger Information</h2>
         </div>
-        <h3>@TempData["Error"]</h3>
-        <form asp-action="SatinAlmaTamamlandi" asp-controller="SatinAlma">
+        <h3 class="text-danger">@TempData["Error"]</h3>
+        <form asp-action="SatinAlmaOnay" asp-controller="SatinAlma">
             @for (int i = 0; i < @ViewBag.kacKisi; i++)
             {
                 <div class="form-div">
@@ -19,12 +19,18 @@
                         </div>
                         <div class="inputlar">
                             <div class="radio-buttonlar">
-                                <input class="form-check-input" type="radio" name="Gender" value="true"/><label>MR.</label>
-                                <input class="form-check-input" type="radio" name="Gender" value="false"/><label>MS.</label>
+                                
+                               @* <input class="form-check-input" type="radio" name="Gender" value="true" checked/><label>MR.</label>
+                                <input class="form-check-input" type="radio" name="Gender" value="false"/><label>MS.</label>*@
+                                <label asp-for="Gender"></label>
+                                <select class="form-control" name="Gender">
+                                    <option value="true">Mr.</option>
+                                    <option value="false">Ms.</option>
+                                </select>
                                 <span asp-validation-for="Gender"></span> @*validation*@
                             </div>
                             <div></div>
-                            <label>isim<input class="form-control" name="FirstName" type="text" /></label>
+                            <label>İsim<input class="form-control" name="FirstName" type="text" /></label>
                             <label>Soyisim<input class="form-control" name="LastName" type="text" /></label>
                             <span asp-validation-for="FirstName"></span>@*validation*@
                             <span asp-validation-for="LastName"></span>@*validataion*@

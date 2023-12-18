@@ -14,8 +14,14 @@ namespace WebProgrammingProject.Controllers
         FlightManager flightManager = new FlightManager(new EfFlightDal());
 
 
+        [HttpPost]
         public IActionResult Booking(FlightSearchViewModel fsModel)
         {
+            if (fsModel.kacKisi < 1)
+            {
+                TempData["Error"] = "Lufen düzgün bir sayida yolcu sayisi giriniz.";
+                return RedirectToAction("Index","Anasayfa");
+            }
             List<Flight> liste = flightManager.GetFlightsWithJoin();
             List<FlightBookingViewModel> eslesenler=new List<FlightBookingViewModel>();
             foreach (Flight ucus in liste)

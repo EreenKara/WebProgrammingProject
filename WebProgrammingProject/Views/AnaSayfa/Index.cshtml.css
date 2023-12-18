@@ -3,6 +3,7 @@
     background-size: cover;
     padding: 1px;
     color: var(--label-flight-text-color);
+    margin-bottom:152px;
 }
 
 #flight-Choose {

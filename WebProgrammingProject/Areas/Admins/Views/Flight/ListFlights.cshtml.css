@@ -1,0 +1,10 @@
+.biletler{
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+}
+.bilet{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+}

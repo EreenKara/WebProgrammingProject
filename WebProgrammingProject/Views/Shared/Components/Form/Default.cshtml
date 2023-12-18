@@ -3,13 +3,13 @@
     <div id="form">
         <div id="neredenDiv" class="form-div">
             <label id="neredenLabel" class="control-label">@languageService.GetKey("FormPartial.Nereden")</label>
-            <select id="nereden" name="From" class="form-control" style="border-radius: 20px;padding: 10px 20px;" asp-items="@ViewBag.airports"></select>
+            <select id="nereden" style="height: 55px;position:relative; bottom:-6px;" name="From" class="form-control"  asp-items="@ViewBag.airports"></select>
         </div>
         <div class="form-group">
         </div>
         <div class="form-div">
             <label id="nereyeLabel">@languageService.GetKey("FormPartial.Nereye")</label>
-            <select id="nereye" name="To" class="form-control" style="border-radius: 20px;padding: 10px 20px;" asp-items="@ViewBag.airports"></select>
+            <select id="nereye" style="height: 55px; position:relative; bottom:-6px;" name="To" class="form-control"  asp-items="@ViewBag.airports"></select>
         </div>
         <div class="form-div">
             <label class="kucuk-label">@languageService.GetKey("FormPartial.Gidis")</label>

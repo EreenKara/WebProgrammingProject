@@ -2,92 +2,111 @@
 
 <h3>@TempData["Error"]</h3>
 
-
-@if (Model.Any())
-{
-    foreach (var airport in Model)
+<div class="airports">
+    @if (Model.Any())
     {
-        <div class="card">
-            <div class="card-header">
-                Airport ID :  @airport.ID
-            </div>
-            <div class="card-body flex-column">
-                Airport Code : @airport.AirportCode
-                Airport Country : @airport.Country
-                Airport City : @airport.City
-                Departing :
-                @if (airport.DepartingFlights.Any())
-                {
-                    @foreach (var flights in airport.DepartingFlights)
+        foreach (var airport in Model)
+        {
+            <div class="card kart">
+                <div class="card-header kart-header">
+                    <div class="card-title">Airport ID :  @airport.ID</div>
+                    <div class="card-title">Airport Code : @airport.AirportCode</div>
+                    <div class="card-title">Airport Country : @airport.Country</div>
+                    <div class="card-title">Airport City : @airport.City</div>
+                </div>
+                <div class="card-body flex-column">
+                    @if (airport.DepartingFlights.Any())
                     {
-                        <div class="card">
-                            <div class="card-header">
-                                Flight
-                            </div>
-                            <div class="card-body flex-column">
-                                Arrival Time :@flights.ArrivalTime
-                                Departure Time :@flights.DepartureTime
-                                Economy Price :@flights.EconomyPrice
-                                Business Price :@flights.BusinessPrice
-
-                            </div>
-                        </div>
-                    }
-                }
-                else
-                {
-                    <div class="card">
-                        <div class="card-header">
-                            No Departing Flights Found
-                        </div>
-                    </div>
-                }
-                Arriving : 
-                @if (airport.ArrivingFlights.Any())
-                {
-                    @foreach (var flights in airport.ArrivingFlights)
-                    {
-                        <div class="card">
-                            <div class="card-header">
-                                Airport ID :  @airport.ID
-                            </div>
-                            <div class="card-body flex-column">
-                                Airport Code : @airport.AirportCode
-                                Airport Country : @airport.Country
-                                Airport City : @airport.City
+                        <table class="table">
+                            <caption>Departure Flights</caption>
+                            <thead>
+                                <tr>
+                                    <th>Ucus ID</th>
+                                    <th>Departure Time</th>
+                                    <th>Arrival Time</th>
+                                    <th>Economy Price</th>
+                                    <th>Business Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var flights in airport.DepartingFlights)
+                                {
+                                    <tr>
+                                        <td>@flights.ID</td>
+                                        <td>@flights.DepartureTime</td>
+                                        <td>@flights.ArrivalTime</td>
+                                        <td>@flights.EconomyPrice</td>
+                                        <td>@flights.BusinessPrice</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
                     
+                    }
+                    else
+                    {
+                        <div class="card kart">
+                            <div class="card-header kart-header">
+                                No Departing Flights Found
                             </div>
                         </div>
                     }
-                }
-                else
-                {
-                    <div class="card">
-                        <div class="card-header">
-                            No Arriving Flights Found
+                    @if (airport.ArrivingFlights.Any())
+                    {
+                        <table class="table">
+                            <caption>Arrival Flights</caption>
+                            <thead>
+                                <tr>
+                                    <th>Ucus ID</th>
+                                    <th>Departure Time</th>
+                                    <th>Arrival Time</th>
+                                    <th>Economy Price</th>
+                                    <th>Business Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var flights in airport.ArrivingFlights)
+                                {
+                                    <tr>
+                                        <td>@flights.ID</td>
+                                        <td>@flights.DepartureTime</td>
+                                        <td>@flights.ArrivalTime</td>
+                                        <td>@flights.EconomyPrice</td>
+                                        <td>@flights.BusinessPrice</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <div class="card kart">
+                            <div class="card-header kart-header">
+                                No Arriving Flights Found
+                            </div>
                         </div>
-                    </div>
-                }
+                    }
 
+                </div>
+                <div class="card-footer">
+                    @*<a asp-action="EditAirport" asp-controller="Airport" asp-area="Admins" asp-route-roleID="@airport.ID" class="btn btn-primary">Edit</a>
+                    <a href = "" class="btn btn-danger">Delete</a>*@
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="card kart">
+            <div class="card-header kart-header">
+                No Airport Found
+            </div>
+            <div class="card-body">
+                Airport Create
             </div>
             <div class="card-footer">
-                <a asp-action="EditAirport" asp-controller="Airport" asp-area="Admins" asp-route-roleID="@airport.ID" class="btn btn-primary">Edit</a>
-                <a href = "" class="btn btn-danger">Delete</a>
+                <a asp-action="CreateAirport" asp-controller="Airport"  asp-area="Admins" class="btn btn-primary">Create</a>
             </div>
         </div>
     }
-}
-else
-{
-    <div class="card">
-        <div class="card-header">
-            No Airport Found
-        </div>
-        <div class="card-body">
-            Airport Create
-        </div>
-        <div class="card-footer">
-            <a asp-action="CreateAirport" asp-controller="Airport"  asp-area="Admins" class="btn btn-primary">Create</a>
-        </div>
-    </div>
-}
+</div>

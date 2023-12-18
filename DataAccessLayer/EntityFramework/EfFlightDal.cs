@@ -17,7 +17,7 @@ namespace DataAccessLayer.EntityFramework
         public List<Flight> GetFlightsWithJoin()
         {
             using var c = new AirLineContext();
-            var liste = c.Flights.Include(x=>x.Airplane).Include(x=>x.ArrivalAirport).Include(x=>x.DepartureAirport).ToList();
+            var liste = c.Flights.Include(x=>x.Airplane).Include(x=>x.ArrivalAirport).Include(x=>x.DepartureAirport).Include(x=>x.Tickets).ToList();
             return liste;
         }
 

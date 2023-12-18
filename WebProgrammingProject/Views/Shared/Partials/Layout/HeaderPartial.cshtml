@@ -57,9 +57,13 @@
                         <a asp-action="SignUp" asp-controller="Login" asp-area="">@languageService.GetKey("Layout.Header.Kayıtol")</a>
                     </div>
                     <div class="navPart">
+                        <a asp-action="Login" asp-controller="Login" asp-area="">@languageService.GetKey("Layout.Header.DropDown.Girisyap")</a>
+                    </div>
+                    <div class="navPart">
                         <partial name="~/Views/Shared/Partials/Layout/DropdownPartial.cshtml" >
                     </div>
                 }
+                @*@User.Identity.IsAuthenticated*@
                 @if(signInManager.IsSignedIn(User) && User.IsInRole("Admin")){
                     <div class="navPart">
                         <a asp-action="Home" asp-controller="HandleUsers" asp-area="Admins">Handle Users</a>

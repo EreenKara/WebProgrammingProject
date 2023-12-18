@@ -7,20 +7,16 @@ namespace WebProgrammingProject.Areas.Admins.Models
         [Required(ErrorMessage ="Bu alanı doldur")]
         public string AirplaneModel { get; set; }
         [Required(ErrorMessage = "Bu alanı doldur")]
-        [MaxLength(5, ErrorMessage = "Bu aln 5 i gecmez")]
-        [RegularExpression(@"\d-\d-\d",ErrorMessage ="Lufen 0-0-0 formatında bir deger girin")]
+        [RegularExpression(@"((\d+)-){0,2}(\d+)", ErrorMessage ="Lufen sayilari \"-\" ile ayırarak giris yapiniz. 3-3 ve en fazla 3 sayi girebilirsin")]
         public string RowSeatNumberEconomy { get; set; }
         [Required(ErrorMessage = "Bu alanı doldur")]
-        [MaxLength(5, ErrorMessage = "Bu aln 5 i gecmez")]
-        [RegularExpression(@"\d-\d-\d",ErrorMessage ="Lufen 0-0-0 formatında bir deger girin")]
+        [RegularExpression(@"((\d+)-){0,2}(\d+)", ErrorMessage = "Lufen sayilari \"-\" ile ayırarak giris yapiniz. 3-3 ve en fazla 3 sayi girebilirsin")]
         public string ColumnSeatNumberEconomy { get; set; }
         [Required(ErrorMessage = "Bu alanı doldur")]
-        [MaxLength(5, ErrorMessage = "Bu aln 5 i gecmez")]
-        [RegularExpression(@"\d-\d-\d",ErrorMessage ="Lufen 0-0-0 formatında bir deger girin")]
+        [RegularExpression(@"((\d+)-){0,2}(\d+)", ErrorMessage = "Lufen sayilari \"-\" ile ayırarak giris yapiniz. 3-3 ve en fazla 3 sayi girebilirsin")]
         public string RowSeatNumberBusiness { get; set; }
         [Required(ErrorMessage = "Bu alanı doldur")]
-        [MaxLength(5, ErrorMessage = "Bu aln 5 i gecmez")]
-        [RegularExpression(@"\d-\d-\d",ErrorMessage ="Lufen 0-0-0 formatında bir deger girin")]
+        [RegularExpression(@"((\d+)-){0,2}(\d+)", ErrorMessage = "Lufen sayilari \"-\" ile ayırarak giris yapiniz. 3-3 ve en fazla 3 sayi girebilirsin")]
         public string ColumnSeatNumberBusiness { get; set; }
 
 

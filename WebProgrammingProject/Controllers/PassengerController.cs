@@ -23,18 +23,22 @@ namespace WebProgrammingProject.Controllers
         {
             // Burada koltuk seçimlerinin business mı yoksa economy'mi olduğunu bunun fiyatla doğru eşleşmesini ypamadım
             // Zaman yoktu sonuçta bu bir ödev ve deadline'ı var.
+            if (!ModelState.IsValid)
+            {
+                TempData["Error"] = "Hiçbir koltuk seçmediniz";
+                return RedirectToAction("Index", "Anasayfa");
+            }
 
-            if (model.kacKisi!=model.checkedSeats.Count)
+            if (model.kacKisi != model.checkedSeats.Count)
             {
                 KoltukSecimiViewModel koltuk = new KoltukSecimiViewModel()
                 {
                     kacKisi = model.kacKisi,
-                    idAndType = model.flightId.ToString() + "-"+ model.flightType
+                    idAndType = model.flightId.ToString() + "-" + model.flightType
                 };
                 TempData["Error"] = "Lutfen dogru sayida koltuk secin";
-                return RedirectToAction("Koltuklar", "KoltukSecimi",koltuk);
+                return RedirectToAction("Index", "Anasayfa");
             }
-            
 
             ViewBag.flightId=model.flightId;
             ViewBag.flightType = model.flightType;

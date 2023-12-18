@@ -38,7 +38,7 @@ namespace WebAPI.Controllers
                                ArrivingFlights=(from arriving in context.Flights 
                                                 where arriving.ArrivalAirportID == aport.ID select arriving).ToList(),
                                DepartingFlights= (from departing in context.Flights
-                                                where departing.ArrivalAirportID == aport.ID select departing).ToList()
+                                                where departing.DepartureAirportID == aport.ID select departing).ToList()
                            }).ToList();
 
 

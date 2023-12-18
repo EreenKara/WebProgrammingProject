@@ -21,14 +21,14 @@ namespace WebProgrammingProject.Areas.Admins.Controllers
             this.languageService = languageService;
         }
         [HttpGet]
-        public async Task<IActionResult> ListAirplanes()
+        public IActionResult ListAirplanes()
         {
             var liste = airplaneManager.GetList();
 
             return View(liste);
         }
         [HttpGet]
-        public async Task<IActionResult> ShowAirplane(int id)
+        public IActionResult ShowAirplane(int id)
         {
             var airplane = airplaneManager.GetById(id);
             if(airplane!=null)
@@ -44,7 +44,7 @@ namespace WebProgrammingProject.Areas.Admins.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> CreateAirplane(AirplaneViewModel model)
+        public IActionResult CreateAirplane(AirplaneViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -55,7 +55,7 @@ namespace WebProgrammingProject.Areas.Admins.Controllers
                     Airplane airplane = new Airplane()
                     {
                         ColumnSeatNumberBusiness = model.ColumnSeatNumberBusiness,
-                        ColumnSeatNumberEconomy = model.ColumnSeatNumberBusiness,
+                        ColumnSeatNumberEconomy = model.ColumnSeatNumberEconomy,
                         RowSeatNumberBusiness = model.RowSeatNumberBusiness,
                         RowSeatNumberEconomy = model.RowSeatNumberEconomy,
                         Model = model.AirplaneModel

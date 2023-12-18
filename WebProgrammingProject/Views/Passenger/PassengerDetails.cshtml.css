@@ -11,6 +11,7 @@
 }
 section[role="form"] {
     background-color: var(--information-form);
+    margin-bottom:160px;
 }
 .information{
     background-color:white;

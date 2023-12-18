@@ -5,15 +5,19 @@
 
 .form-div input {
     height: 55px;
+
 }
+
 
 .form-div label {
     position: relative;
-    top: 40px;
+    top: 18px;
     left: 13px;
-    font-size: 20px;
+    font-size: 10px;
     pointer-events: none; /*labela týklamamak için yaptým*/
     transition: 0.3s linear 0ms;
+    z-index:5;
+    top: 23px !important;
 }
 
 #form {
@@ -25,8 +29,8 @@
 }
 .kucuk-label {
     top: 25px !important;
-    font-size: 12px !important;
-    z-index:5;
+    font-size: 10px !important;
+    z-index: 5;
 }
 .kucuk-label-input{
     position:relative;

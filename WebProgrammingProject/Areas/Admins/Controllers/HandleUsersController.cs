@@ -30,7 +30,7 @@ namespace WebProgrammingProject.Areas.Admins.Controllers
             return View();
         }
 
-        public async Task<IActionResult > ListRoles()
+        public IActionResult ListRoles()
         {
             var roles = roleManager.Roles;
             
@@ -171,7 +171,7 @@ namespace WebProgrammingProject.Areas.Admins.Controllers
             return RedirectToAction("ListRoles");
         }
         [HttpGet]
-        public async Task<IActionResult> CreateRole()
+        public IActionResult CreateRole()
         {
 
 

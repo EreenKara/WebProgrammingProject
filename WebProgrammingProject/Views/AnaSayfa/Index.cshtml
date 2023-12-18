@@ -1,12 +1,13 @@
-﻿@using Microsoft.AspNetCore.Mvc.Localization;
+﻿@using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer localizer
 @model Person
 <div id="Resimicin">
     <section id="flight-Choose" role="region" aria-labelledby="label-flightChoose">
         <div id="label">
-            <h2>@localizer["selam"]</h2>
+            <h2>@languageService.GetKey("Anasayfa.Index.Merhaba")</h2>
             <h4>@languageService.GetKey("Anasayfa.Index.Label")</h4>
         </div>
+        <h3 class="text-danger">@TempData["Error"]</h3>
         <div id="secimlerDiv">
             <button id="secim1" class="secimler">@languageService.GetKey("Anasayfa.Index.Ucus")</button>
             <button id="secim2" class="secimler">@languageService.GetKey("Anasayfa.Index.Kontrol")</button>
@@ -19,7 +20,7 @@
                 </div>
 
                 <div id="OneWayDiv" class="secimDiv aktif">
-                    @await Component.InvokeAsync("Form");
+                    @await Component.InvokeAsync("Form")
                     @*<partial name="~/Views/Shared/Partials/FormPartial.cshtml" />*@
                 </div>
                 <div id="RoundDiv" class="secimDiv pasif">

@@ -1,10 +1,12 @@
 ﻿@model RoleViewModel
 <h3>@TempData["Error"]</h3>
-<form asp-action="CreateRole" asp-controller="HandleUsers" asp-area="Admins">
-    <div class="form-group">
-        <label asp-for="@Model.RoleName"></label>
-        <input class="form-control" style="border-radius: 20px;padding: 10px 20px;" asp-for="@Model.RoleName"/>
-        <span class="text-danger" asp-validation-for="@Model.RoleName"></span>
+<div class="form-div">
+    <form asp-action="CreateRole" asp-controller="HandleUsers" asp-area="Admins">
+        <div class="form-group">
+            <label asp-for="@Model.RoleName"></label>
+            <input class="form-control" style="border-radius: 20px;padding: 10px 20px;" asp-for="@Model.RoleName"/>
+            <span class="text-danger" asp-validation-for="@Model.RoleName"></span>
+        </div>
         <button class="btn btn-primary" type="submit">Oluştur</button>
-    </div>
-</form>
+    </form>
+</div>

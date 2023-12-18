@@ -32,7 +32,7 @@ namespace WebProgrammingProject.Areas.Users.Controllers
                 
             return View(model);
         }
-        public async Task<IActionResult> Settings()
+        public IActionResult Settings()
         {
 
             return View();

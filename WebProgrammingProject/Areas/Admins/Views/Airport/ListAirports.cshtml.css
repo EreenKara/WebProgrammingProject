@@ -1,0 +1,19 @@
+.kart{
+    margin:20px 10px 20px 10px;
+    border:1px solid black;
+    font-size:15px;
+}
+caption {
+    caption-side: top;
+    
+    font-size:20px;
+    font-weight: 900;
+}
+.kart-header{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+}
+.airports{
+    margin-bottom:160px;
+}

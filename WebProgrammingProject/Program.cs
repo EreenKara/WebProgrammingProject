@@ -60,6 +60,10 @@ builder.Services.AddMvc(config =>
 //{
 //    options.Password.RequireNonAlphanumeric = false;
 //});
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Login/Login";
+});
 #endregion
 
 builder.Services.AddMvc();

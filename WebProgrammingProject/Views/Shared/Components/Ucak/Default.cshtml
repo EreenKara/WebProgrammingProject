@@ -41,6 +41,7 @@
                             @for (int j = 0; j < sutun; j++)
                             {
                                 sutunNumarasi++;
+                                
                                 if(ViewBag.flightType=="business")
                                 {
                                     <li class="seat ">
@@ -62,7 +63,7 @@
                                 }
                                 else{
                                     <li class="seat ">
-                                        <p class="gri" name="@(siraNumarasi)@((char)(64+sutunNumarasi))" id="@(siraNumarasi)@((char)(64+sutunNumarasi))"></p>
+                                        <p class="gri"  id="@(siraNumarasi)@((char)(64+sutunNumarasi))"></p>
                                         @*<input type="checkbox" name="@(siraNumarasi)@((char)(64+sutunNumarasi))" disabled="disabled" id="@(siraNumarasi)@((char)(64+sutunNumarasi))">*@
                                         <label class="seat-economy" for="@(siraNumarasi)@((char)(64+sutunNumarasi))">@(siraNumarasi)@((char)(64 + sutunNumarasi))</label>
                                     </li>
@@ -95,6 +96,7 @@
                                     @for (int j = 0; j < sutun; j++)
                                     {
                                         sutunNumarasi++;
+                                        
                                         if(ViewBag.flightType=="economy")
                                         {
                                             <li class="seat ">
@@ -110,13 +112,14 @@
                                         }
                                         else if(!Model.Contains($"{siraNumarasi}{((char)(64+sutunNumarasi))}") ){
                                             <li class="seat ">
-                                                <input type="checkbox" name="@(siraNumarasi)@((char)(64+sutunNumarasi))" id="@(siraNumarasi)@((char)(64+sutunNumarasi))">
+                                                <input type="checkbox" value="@(siraNumarasi)@((char)(64+sutunNumarasi))" name="checkedSeats" id="@(siraNumarasi)@((char)(64+sutunNumarasi))">
                                                 <label class="seat-business" for="@(siraNumarasi)@((char)(64+sutunNumarasi))">@(siraNumarasi)@((char)(64 + sutunNumarasi))</label>
                                             </li>
                                         }
                                         else{
                                             <li class="seat ">
-                                                <input type="checkbox" name="@(siraNumarasi)@((char)(64+sutunNumarasi))" disabled="disabled" id="@(siraNumarasi)@((char)(64+sutunNumarasi))">
+                                                <p class="gri"  id="@(siraNumarasi)@((char)(64+sutunNumarasi))"></p>
+                                                @*<input type="checkbox" name="@(siraNumarasi)@((char)(64+sutunNumarasi))" disabled="disabled" id="@(siraNumarasi)@((char)(64+sutunNumarasi))">*@
                                                 <label class="seat-business" for="@(siraNumarasi)@((char)(64+sutunNumarasi))">@(siraNumarasi)@((char)(64 + sutunNumarasi))</label>
                                             </li>
                                         }

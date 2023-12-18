@@ -1,0 +1,60 @@
+﻿@model PassengerInformationViewModel
+
+<h2 class="text-danger">@TempData["Error"]</h2>
+<form asp-action="SatinAlmaTamamlandi" asp-controller="SatinAlma"> 
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Ucus id</th> @*flight id*@
+            <th>Ucus tipi</th>
+            <th>Seats</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>Date of Birth</th>
+            <th>Email</th>
+            <th>Tel</th>
+            <th>Kim ödeyecek</th>
+        </tr>
+    </thead>
+    <tbody>
+            @for (int i = 0; i < Model.kacKisi; i++)
+            {
+                <tr>
+                    <td>@Model.id</td>
+                    <td>@Model.type</td>
+                    <td>@Model.checkedSeats.ElementAt(i)</td>
+                    <td>@Model.FirstName.ElementAt(i)</td>
+                    <td>@Model.LastName.ElementAt(i)</td>
+                    <td>@Model.Gender.ElementAt(i)</td>
+                    <td>@Model.DateofBirth.ElementAt(i)</td>
+                    <td>@Model.Email.ElementAt(i)</td>
+                    <td >@Model.Tel.ElementAt(i)</td>
+                    <td><input class="form-check" name="kimOdedi" type="radio" value="@i.ToString()"></td>
+                    <input type="hidden" name="checkedSeats" value="@Model.checkedSeats.ElementAt(i)">
+                    <input type="hidden" name="Gender" value="@Model.Gender.ElementAt(i).ToString()">
+                    <input type="hidden" name="FirstName" value="@Model.FirstName.ElementAt(i)">
+                    <input type="hidden" name="LastName" value="@Model.LastName.ElementAt(i)">
+                    <input type="hidden" name="DateofBirth" value="@Model.DateofBirth.ElementAt(i)">
+                    <input type="hidden" name="Email" value="@Model.Email.ElementAt(i)">
+                    <input type="hidden" name="Tel" value="@Model.Tel.ElementAt(i)">
+                    <input type="hidden" name="Accept" value="@Model.Accept.ElementAt(i).ToString()">
+                    
+
+                    @*<td>@Model.checkedSeats.ElementAt(i)</td>
+                    <td>@Model.passengerDetails.ElementAt(i).FirstName</td>
+                    <td>@Model.passengerDetails.ElementAt(i).LastName</td>
+                    <td>@Model.passengerDetails.ElementAt(i).Gender</td>
+                    <td>@Model.passengerDetails.ElementAt(i).DateofBirth</td>
+                    <td>@Model.passengerDetails.ElementAt(i).Email</td>
+                    <td>@Model.passengerDetails.ElementAt(i).Tel</td>*@
+                </tr>
+            }
+    </tbody>
+</table>
+    <input type="hidden" name="id" value="@Model.id">
+    <input type="hidden" name="type" value="@Model.type">
+    <input type="hidden" name="kacKisi" value="@Model.kacKisi">
+    <input type="hidden" name="price" value="@Model.price">
+    <div class="btn-div"><button type="submit" class="btn btn-primary">Onay</button></div>
+</form>

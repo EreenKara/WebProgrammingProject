@@ -6,13 +6,13 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Ucus ID</th>
-                <th>KAlkis zamani</th>
-                <th>İniş zmaani</th>
-                <th>ÜCret</th>
+                <th>Uçus ID</th>
+                <th>Kalkış zamanı</th>
+                <th>İniş zamani</th>
+                <th>Ücret</th>
                 <th>Bilet tipi</th>
                 <th>Airplane Model</th>
-                <th>NEreden</th>
+                <th>Nereden</th>
                 <th>Nereye</th>
             </tr>
         </thead>
@@ -32,14 +32,16 @@
 </div>
 
 <h3>@TempData["Error"]</h3>
-<form asp-action="PassengerDetails" asp-controller="Passenger" method="post">
-    <div class="ucak">
+<div class="ucak">
+    <form asp-action="PassengerDetails" asp-controller="Passenger" method="post">
     
-        @await Component.InvokeAsync("Ucak",new UcakViewModel(){airplane=Model.Airplane,doluKoltuklar=ViewBag.takenSeats,flightType=ViewBag.flightType});
-        <input type="hidden" name="flightID" value="@Model.ID"/>
-        <input type="hidden" name="flightType" value="@ViewBag.flightType"/>
-        <input type="hidden" name="kacKisi" value="@ViewBag.kacKisi"/>
-        <input type="hidden" name="price" value="@ViewBag.price"/>
-    </div>
-    <button class="btn btn-primary" type="submit">Submit</button>
-</form>
+    
+            @await Component.InvokeAsync("Ucak",new UcakViewModel(){airplane=Model.Airplane,doluKoltuklar=ViewBag.takenSeats,flightType=ViewBag.flightType})
+            <input type="hidden" name="flightID" value="@Model.ID"/>
+            <input type="hidden" name="flightType" value="@ViewBag.flightType"/>
+            <input type="hidden" name="kacKisi" value="@ViewBag.kacKisi"/>
+            <input type="hidden" name="price" value="@ViewBag.price"/>
+    
+        <div class="btn-div"><button class="btn btn-primary" type="submit">Submit</button></div>
+    </form>
+</div>

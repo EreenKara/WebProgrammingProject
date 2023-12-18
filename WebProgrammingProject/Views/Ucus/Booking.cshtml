@@ -1,13 +1,15 @@
 ﻿@using EntityLayer.Concrete
-@using WebProgrammingProject.Areas.Admins.Models;
+@using WebProgrammingProject.Areas.Admins.Models
 @model List<FlightBookingViewModel>
 <div class="formDiv">
-    @await Component.InvokeAsync("Form");
+    @await Component.InvokeAsync("Form")
 </div>
+
 
 <div class="ucus-gunleri">
 
 </div>
+<h2 class="text-danger">@TempData["Error"]</h2>
 <form asp-action="Koltuklar" asp-controller="KoltukSecimi" >
     <div class="ucuslar">
         <div class="ucuslar-header">
@@ -62,7 +64,7 @@
                             </div>
                         </li>
                     }
-                    <button class="btn btn-primary justify-content-center align-content-center" type="submit" >Submit</button>
+                    <div class="btn-div"><button class="btn btn-primary buton" type="submit" >Submit</button></div>
 
                 }
                 else
