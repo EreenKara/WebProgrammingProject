@@ -1,0 +1,80 @@
+﻿@using EntityLayer.Concrete
+@using WebProgrammingProject.Areas.Admins.Models;
+@model List<FlightBookingViewModel>
+<div class="formDiv">
+    @await Component.InvokeAsync("Form");
+</div>
+
+<div class="ucus-gunleri">
+
+</div>
+<form asp-action="Koltuklar" asp-controller="KoltukSecimi" >
+    <div class="ucuslar">
+        <div class="ucuslar-header">
+
+        </div>
+        <div class="listeleme">
+            <ol>
+                @if (Model.Count>0)
+                {
+                    @foreach(var ucus in Model)
+                    {
+                        <li class="ucus">
+                            <div class="ucus-detaylari shadow-ben ">
+                                <div class="cizgi">
+                                    <div class="kalkis-location">
+                                        <p class="kalkis-saati font-weight-bold">@(ucus.DepartureTime.Year)/@(ucus.DepartureTime.Month)/@(ucus.DepartureTime.Day)</p>
+                                        <p class="kalkis-saati font-weight-bold">@(ucus.DepartureTime.Hour):@(ucus.DepartureTime.Minute)</p>
+                                        <p class="kalkis-havalimani-kodu">@ucus.DepartureAirport.AirportCode</p>
+                                        <p class="kalkis-sehri">@ucus.DepartureAirport.City</p>
+                                    </div>
+                                    <div class="yol-fotograf"></div>
+                                    <div class="inis-location">
+                                        <p class="inis-saati font-weight-bold">@(ucus.ArrivalTime.Year)/@(ucus.ArrivalTime.Month)/@(ucus.ArrivalTime.Day)</p>
+                                        <p class="kalkis-saati font-weight-bold">@(ucus.ArrivalTime.Hour):@(ucus.ArrivalTime.Minute)</p>
+                                        <p class="inis-havalimani-kodu">@ucus.ArrivalAirport.AirportCode</p>
+                                        <p class="inis-sehri">@ucus.ArrivalAirport.City</p>
+                                    </div>
+                                </div>
+                                <p class="ucak-tipi">Aircraft: @ucus.Airplane.Model</p>
+                            </div>
+                            <div class="economy flex-kolon shadow-ben">
+                                    <p class="ucustipi-header font-weight-bold">Economy</p>
+                                <div class="flex-satir">
+                                    <input class="form-check-input" type="radio" name="idAndType" value="@(ucus.ID)-economy"/>
+                                    <div class="flex-kolon">
+                                        <p>per person</p>
+                                        <p class="fiyat  font-weight-bold">@ucus.EconomyPrice</p>
+                                        <p class="uyari text-danger">Uyari</p>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="business flex-kolon shadow-ben">
+                                <p class="ucustipi-header font-weight-bold">Business</p>
+                                <div class="flex-satir">
+                                    <input class="form-check-input" type="radio" name="idAndType" value="@(ucus.ID)-business"/>
+                                    <div class="flex-kolon">
+                                        <p>per person</p>
+                                        <p class="fiyat font-weight-bold">@ucus.BusinessPrice</p>
+                                        <p class="uyari text-danger">Uyari</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                    <button class="btn btn-primary justify-content-center align-content-center" type="submit" >Submit</button>
+
+                }
+                else
+                {
+                    <li class="ucus">
+                        <h3>Ucus Bulunamadi</h3>
+                    </li>
+
+                }
+            
+            </ol>
+        </div>
+    </div>
+    <input type="hidden" name="kacKisi" value="@ViewBag.kacKisi"/>
+</form>

@@ -76,7 +76,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-app.UseAuthentication(); // Authentication
+app.UseAuthentication(); // Authentication identity
 app.UseRouting();
 
 // Localization
@@ -98,6 +98,9 @@ app.UseEndpoints(endpoints =>
     
 });
 
-await RoleAndAdminData.InitializeAsync(app.Services);
-
+using (var scope = app.Services.CreateScope())
+{
+    var provider = scope.ServiceProvider;
+    RoleAndAdminData.InitializeAsync(provider).Wait();
+}
 app.Run();

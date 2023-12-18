@@ -1,4 +1,4 @@
-﻿@model EntityLayer.Concrete.Airport
+﻿@model AirportViewModel
 
 @{
     ViewData["Title"] = "View";
@@ -6,7 +6,7 @@
 <div class="form-duzenleme">
     <div class="row">
         <div class="col-md-12">
-            <form asp-action="View">
+            <form asp-action="CreateAirport" asp-controller="Airport" asp-area="Admins">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="AirportCode" class="control-label"></label>
@@ -22,7 +22,6 @@
                     <label asp-for="City" class="control-label"></label>
                     <input asp-for="City" class="form-control" />
                     <span asp-validation-for="City" class="text-danger"></span>
-                </div>
                 <div class="form-group">
                     <input type="submit" value="Create" class="btn btn-primary" />
                 </div>
@@ -30,10 +29,5 @@
         </div>
     </div>
 </div>
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+

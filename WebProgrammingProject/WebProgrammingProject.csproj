@@ -26,7 +26,6 @@
   <ItemGroup>
     <Folder Include="Areas\Admins\Data\" />
     <Folder Include="Areas\Users\Data\" />
-    <Folder Include="Views\Admin\Components\" />
   </ItemGroup>
 
 </Project>

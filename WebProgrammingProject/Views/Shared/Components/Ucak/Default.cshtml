@@ -1,0 +1,145 @@
+﻿@model List<string>
+@{
+
+    List<int> satirEconomy = ViewBag.satirEconomy;
+    List<int> sutunEconomy = ViewBag.sutunEconomy;
+    List<int> satirBusiness = ViewBag.satirBusiness;
+    List<int> sutunBusiness = ViewBag.sutunBusiness;
+    int siraNumarasi = 0;
+    int sutunNumarasi = 0;
+    int ucakGenislik = ViewBag.ucakGenislik;
+}
+
+<style>
+    .plane{
+          max-width: @(ucakGenislik)px;
+    }
+</style>
+
+<div class="plane">
+    <div class="cockpit">
+        <h1>@ViewBag.Name</h1>
+    </div>
+    <div class="koltuklar">
+        <div class="exit exit--front fuselage">
+
+        </div>
+
+        <ol class="cabin fuselage economy">
+            <h5 class="text-center">Economy</h5>
+        @foreach (int satir in satirEconomy)
+        {
+        <div class="satir-ayrim">
+            @for (int i = 0; i < satir; i++)
+            {
+                siraNumarasi++;
+                <li class="row row--@(siraNumarasi)">
+                    <ol class="seats" type="A">
+                    @foreach (int sutun in sutunEconomy)
+                    {
+                        <div class="sutun-ayrim sutun-ayrim-economy ">
+                            @for (int j = 0; j < sutun; j++)
+                            {
+                                sutunNumarasi++;
+                                if(ViewBag.flightType=="business")
+                                {
+                                    <li class="seat ">
+                                        <p class="gri" name="@(siraNumarasi)@((char)(64+sutunNumarasi))" id="@(siraNumarasi)@((char)(64+sutunNumarasi))"></p>
+                                        <label class="seat-economy" for="@(siraNumarasi)@((char)(64+sutunNumarasi))">@(siraNumarasi)@((char)(64 + sutunNumarasi))</label>
+                                    </li>
+                                }
+                                else if(Model==null){
+                                    <li class="seat ">
+                                        <input type="checkbox" name="@(siraNumarasi)@((char)(64+sutunNumarasi))" id="@(siraNumarasi)@((char)(64+sutunNumarasi))">
+                                        <label class="seat-economy" for="@(siraNumarasi)@((char)(64+sutunNumarasi))">@(siraNumarasi)@((char)(64 + sutunNumarasi))</label>
+                                    </li>
+                                }
+                                else if(!Model.Contains($"{siraNumarasi}{((char)(64+sutunNumarasi))}") ){
+                                    <li class="seat ">
+                                        <input type="checkbox" name="checkedSeats" value="@(siraNumarasi)@((char)(64+sutunNumarasi))" id="@(siraNumarasi)@((char)(64+sutunNumarasi))">
+                                        <label class="seat-economy" for="@(siraNumarasi)@((char)(64+sutunNumarasi))">@(siraNumarasi)@((char)(64 + sutunNumarasi))</label>
+                                    </li>
+                                }
+                                else{
+                                    <li class="seat ">
+                                        <p class="gri" name="@(siraNumarasi)@((char)(64+sutunNumarasi))" id="@(siraNumarasi)@((char)(64+sutunNumarasi))"></p>
+                                        @*<input type="checkbox" name="@(siraNumarasi)@((char)(64+sutunNumarasi))" disabled="disabled" id="@(siraNumarasi)@((char)(64+sutunNumarasi))">*@
+                                        <label class="seat-economy" for="@(siraNumarasi)@((char)(64+sutunNumarasi))">@(siraNumarasi)@((char)(64 + sutunNumarasi))</label>
+                                    </li>
+                                }
+                            }
+                        </div>
+                    }
+                    </ol>
+                </li>
+                sutunNumarasi = 0;
+
+            }
+        </div>
+        }
+        
+        </ol>
+        <ol class="cabin fuselage economy">
+            <h5 class="text-center">Business</h5>
+            @foreach (int satir in satirBusiness)
+            {
+                <div class="satir-ayrim">
+                    @for (int i = 0; i < satir; i++)
+                    {
+                        siraNumarasi++;
+                        <li class="row row--@(siraNumarasi)">
+                            <ol class="seats" type="A">
+                            @foreach (int sutun in sutunBusiness)
+                            {
+                                <div class="sutun-ayrim sutun-ayrim-business">
+                                    @for (int j = 0; j < sutun; j++)
+                                    {
+                                        sutunNumarasi++;
+                                        if(ViewBag.flightType=="economy")
+                                        {
+                                            <li class="seat ">
+                                                <p class="gri" name="@(siraNumarasi)@((char)(64+sutunNumarasi))" id="@(siraNumarasi)@((char)(64+sutunNumarasi))"></p>
+                                                <label class="seat-business" for="@(siraNumarasi)@((char)(64+sutunNumarasi))">@(siraNumarasi)@((char)(64 + sutunNumarasi))</label>
+                                            </li>
+                                        }
+                                        else if(Model==null){
+                                            <li class="seat ">
+                                                <input type="checkbox" name="@(siraNumarasi)@((char)(64+sutunNumarasi))" id="@(siraNumarasi)@((char)(64+sutunNumarasi))">
+                                                <label class="seat-business" for="@(siraNumarasi)@((char)(64+sutunNumarasi))">@(siraNumarasi)@((char)(64 + sutunNumarasi))</label>
+                                            </li>
+                                        }
+                                        else if(!Model.Contains($"{siraNumarasi}{((char)(64+sutunNumarasi))}") ){
+                                            <li class="seat ">
+                                                <input type="checkbox" name="@(siraNumarasi)@((char)(64+sutunNumarasi))" id="@(siraNumarasi)@((char)(64+sutunNumarasi))">
+                                                <label class="seat-business" for="@(siraNumarasi)@((char)(64+sutunNumarasi))">@(siraNumarasi)@((char)(64 + sutunNumarasi))</label>
+                                            </li>
+                                        }
+                                        else{
+                                            <li class="seat ">
+                                                <input type="checkbox" name="@(siraNumarasi)@((char)(64+sutunNumarasi))" disabled="disabled" id="@(siraNumarasi)@((char)(64+sutunNumarasi))">
+                                                <label class="seat-business" for="@(siraNumarasi)@((char)(64+sutunNumarasi))">@(siraNumarasi)@((char)(64 + sutunNumarasi))</label>
+                                            </li>
+                                        }
+                                    }
+                                </div>
+                            }
+                            </ol>
+                        </li>
+                        sutunNumarasi = 0;
+
+                    }
+                </div>
+            }
+        
+        </ol>
+
+    </div>
+</div>
+
+
+
+
+
+@*  <div class="exit exit--back fuselage">
+
+  </div>*@

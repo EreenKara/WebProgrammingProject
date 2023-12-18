@@ -33,6 +33,17 @@ namespace BusinessLayer.Concrete
             return _flightDal.GetByID(id);
         }
 
+        public List<Flight> GetFlightsWithJoin()
+        {
+            return _flightDal.GetFlightsWithJoin();
+        }
+
+        public Flight GetFlightWithJoinById(int id)
+        {
+            return _flightDal.GetFlightWithJoinById(id);
+
+        }
+
         public List<Flight> GetList()
         {
             return _flightDal.GetList();

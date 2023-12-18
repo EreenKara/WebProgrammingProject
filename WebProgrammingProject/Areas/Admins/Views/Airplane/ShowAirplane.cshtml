@@ -1,0 +1,30 @@
+﻿@using WebProgrammingProject.ViewComponents.Models;
+@model EntityLayer.Concrete.Airplane
+
+<h4>Airplane</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Airport ID :  @Model.ID
+                    RowSeatNumberEconomy : @Model.RowSeatNumberEconomy
+                    ColumnSeatNumberEconomy : @Model.ColumnSeatNumberEconomy
+                    RowSeatNumberBusiness : @Model.RowSeatNumberBusiness
+                    ColumnSeatNumberBusiness : @Model.ColumnSeatNumberBusiness
+                </div>
+                <div class="card-body flex-column">
+                    @await Component.InvokeAsync("Ucak",new UcakViewModel {airplane=Model,doluKoltuklar=null,flightType=null})
+
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+<div>
+    <a asp-action="ListAirplanes">Back to List</a>
+</div>

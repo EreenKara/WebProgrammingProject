@@ -27,6 +27,12 @@ namespace BusinessLayer.Concrete
             _airportDal.Delete(entity);
         }
 
+        public Airport GetAiportByCode(string code)
+        {
+            var airport=_airportDal.GetAiportByCode(code);
+            return airport;
+        }
+
         public Airport GetById(int id)
         {
             return _airportDal.GetByID(id);

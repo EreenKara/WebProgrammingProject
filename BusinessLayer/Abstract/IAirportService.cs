@@ -9,5 +9,6 @@ namespace BusinessLayer.Abstract
 {
     public interface IAirportService : IGenericService<Airport>
     {
+        public Airport GetAiportByCode(string code);
     }
 }

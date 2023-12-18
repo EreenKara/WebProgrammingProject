@@ -9,8 +9,8 @@ using WebProgrammingProject.Services;
 
 namespace WebProgrammingProject.Areas.Admins.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Area("Admins")]
-    [AllowAnonymous]
     public class HandleUsersController : Controller
     {
         private readonly RoleManager<AppRole> roleManager;

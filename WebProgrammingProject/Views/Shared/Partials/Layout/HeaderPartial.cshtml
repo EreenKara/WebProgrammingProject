@@ -62,10 +62,10 @@
                 }
                 @if(signInManager.IsSignedIn(User) && User.IsInRole("Admin")){
                     <div class="navPart">
-                        <a asp-action="Home" asp-controller="HandleUsers" asp-area="Admins">HandleUsers</a>
+                        <a asp-action="Home" asp-controller="HandleUsers" asp-area="Admins">Handle Users</a>
                     </div>
                     <div class="navPart">
-                        <a asp-action="Home" asp-controller="HandleFlight" asp-area="Admins">HandleFlights</a>
+                        <a asp-action="Home" asp-controller="Admin" asp-area="Admins">Flight Control</a>
                     </div>
                 }
                 <div class="navPart">  

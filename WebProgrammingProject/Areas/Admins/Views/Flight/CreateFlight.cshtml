@@ -1,0 +1,56 @@
+﻿@model FlightViewModel
+
+@{
+    ViewData["Title"] = "CreateFlights";
+}
+<h4>@TempData["Error"]</h4>
+
+<form asp-action="CreateFlight" asp-controller="Flight" asp-area="Admins">
+    <div class="formdiv">
+        <h4>Create Flight</h4>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="DepartureTime" class="control-label"></label>
+            <input asp-for="DepartureTime" style="border-radius: 20px;padding: 10px 20px;" class="form-control" />
+            <span asp-validation-for="DepartureTime" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ArrivalTime" class="control-label"></label>
+            <input asp-for="ArrivalTime" style="border-radius: 20px;padding: 10px 20px;" class="form-control" />
+            <span asp-validation-for="ArrivalTime" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="EconomyPrice" class="control-label"></label>
+            <input asp-for="EconomyPrice" style="border-radius: 20px;padding: 10px 20px;" class="form-control" />
+            <span asp-validation-for="EconomyPrice" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="BusinessPrice" class="control-label"></label>
+            <input asp-for="BusinessPrice" style="border-radius: 20px;padding: 10px 20px;" class="form-control" />
+            <span asp-validation-for="BusinessPrice" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AirplaneID" class="control-label"></label>
+            <select asp-for="AirplaneID" style="border-radius: 20px;padding: 10px 20px;" class ="form-control" asp-items="ViewBag.Airplanes"></select>
+        </div>
+        <div class="form-group">
+            <label asp-for="DepartureAirportID" class="control-label"></label>
+            <select asp-for="DepartureAirportID" style="border-radius: 20px;padding: 10px 20px;" class ="form-control" asp-items="ViewBag.DepartureAirports"></select>
+        </div>
+        <div class="form-group">
+            <label asp-for="ArrivalAirportID" class="control-label"></label>
+            <select asp-for="ArrivalAirportID" style="border-radius: 20px;padding: 10px 20px;" class ="form-control" asp-items="ViewBag.ArrivalAirports"></select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="ListFlights">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -9,5 +9,6 @@ namespace DataAccessLayer.Abstract
 {
     public interface IAirplaneDal : IGenericDal<Airplane>
     {
+        public Airplane GetAirplaneByModel(string model);
     }
 }

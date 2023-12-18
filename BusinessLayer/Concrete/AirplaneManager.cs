@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace BusinessLayer.Concrete
             _airplaneDal = airplaneDal;
 
         }
+
         public void Add(Airplane entity)
         {
             _airplaneDal.Add(entity);
@@ -31,7 +33,11 @@ namespace BusinessLayer.Concrete
         {
             return _airplaneDal.GetByID(id);
         }
-
+        public Airplane GetAirplaneByModel(string model)
+        {
+            
+            return _airplaneDal.GetAirplaneByModel(model);
+        }
         public List<Airplane> GetList()
         {
             return _airplaneDal.GetList();

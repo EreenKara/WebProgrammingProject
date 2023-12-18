@@ -1,0 +1,42 @@
+﻿@model PassengerInformationViewModel
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ucus id</th> @*flight id*@
+            <th>Ucus tipi</th>
+            <th>Seats</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date of Birth</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Tel</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(int i = 0; i< Model.kacKisi;i++)
+        {
+            <tr>
+                <td>@Model.id</td>
+                <td>@Model.type</td>
+                <td>@Model.checkedSeats.ElementAt(i)</td>
+                <td>@Model.FirstName.ElementAt(i)</td>
+                <td>@Model.LastName.ElementAt(i)</td>
+                <td>@Model.Gender.ElementAt(i)</td>
+                <td>@Model.DateofBirth.ElementAt(i)</td>
+                <td>@Model.Email.ElementAt(i)</td>
+                <td>@Model.Tel.ElementAt(i)</td>
+                    @*<td>@Model.checkedSeats.ElementAt(i)</td>
+                    <td>@Model.passengerDetails.ElementAt(i).FirstName</td>
+                    <td>@Model.passengerDetails.ElementAt(i).LastName</td>
+                    <td>@Model.passengerDetails.ElementAt(i).Gender</td>
+                    <td>@Model.passengerDetails.ElementAt(i).DateofBirth</td>
+                    <td>@Model.passengerDetails.ElementAt(i).Email</td>
+                    <td>@Model.passengerDetails.ElementAt(i).Tel</td>*@
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="index" asp-controller="Anasayfa" class="btn btn-primary">Back To Homepage</a>

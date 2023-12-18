@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.Repository;
 using EntityLayer.Concrete;
 using System;
@@ -11,5 +12,11 @@ namespace DataAccessLayer.EntityFramework
 {
     public class EfAirplaneDal : GenericRepository<Airplane>, IAirplaneDal
     {
+        public Airplane GetAirplaneByModel(string model)
+        {
+            using var c = new AirLineContext();
+            Airplane airplane = c.Airplanes.FirstOrDefault(a => a.Model == model);
+            return airplane;
+        }
     }
 }

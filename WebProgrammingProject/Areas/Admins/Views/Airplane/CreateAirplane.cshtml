@@ -1,0 +1,47 @@
+﻿@model AirplaneViewModel
+
+<h3>@TempData["Error"]</h3>
+
+<form method="post" asp-action="CreateAirplane" asp-controller="Airplane" asp-area="Admins">
+    <div class="formdiv">
+        <h2 class="form-group">Create Airplane</h2>
+        <div class="form-group" >
+            <label asp-for="AirplaneModel"></label>
+            <input class="form-control" style="border-radius: 20px;padding: 10px 20px;" asp-for="AirplaneModel"/>
+            <span class="text-danger" asp-validation-for="AirplaneModel"></span>
+        </div>
+        <div class="form-group" >
+            <label asp-for="RowSeatNumberEconomy"></label>
+            <input id="RowSeatNumberEconomy-id" class="form-control" style="border-radius: 20px;padding: 10px 20px;" asp-for="RowSeatNumberEconomy"/>
+            <span class="text-danger" asp-validation-for="RowSeatNumberEconomy"></span>
+        </div>
+        <div class="form-group" >
+            <label asp-for="ColumnSeatNumberEconomy"></label>
+            <input id="ColumnSeatNumberEconomy-id" class="form-control" style="border-radius: 20px;padding: 10px 20px;" asp-for="ColumnSeatNumberEconomy"/>
+            <span class="text-danger" asp-validation-for="ColumnSeatNumberEconomy"></span>
+        </div>
+        <div class="form-group" >
+            <label asp-for="RowSeatNumberBusiness"></label>
+            <input id="RowSeatNumberBusiness-id" class="form-control" style="border-radius: 20px;padding: 10px 20px;" asp-for="RowSeatNumberBusiness"/>
+            <span class="text-danger" asp-validation-for="RowSeatNumberBusiness"></span>
+        </div>
+        <div class="form-group" >
+            <label asp-for="ColumnSeatNumberBusiness"></label>
+            <input id="ColumnSeatNumberBusiness-id"  class="form-control" style="border-radius: 20px;padding: 10px 20px;" asp-for="ColumnSeatNumberBusiness"/>
+            <span class="text-danger" asp-validation-for="ColumnSeatNumberBusiness"></span>
+        </div>
+        <div asp-validation-summary="ModelOnly">
+
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </div>
+
+</form>
+
+
+@section Scripts{
+
+    <script type="text/javascript" src="../Areas/Admins/Views/Airplane/CreateAirplane.cshtml.js"></script>
+}

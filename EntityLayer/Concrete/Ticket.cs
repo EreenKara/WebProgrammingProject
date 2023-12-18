@@ -11,7 +11,7 @@ namespace EntityLayer.Concrete
     {
         public int ID { get; set; }
         public string SeatNumber { get; set; }
-        public string FlightType { get; set; }
+        public string FlightType { get; set; } // Economi mi ?  Business mı ? 
         public double Price { get; set; }
         [ForeignKey(nameof(Flight))]
         public int FlightID { get; set; }

@@ -9,5 +9,8 @@ namespace BusinessLayer.Abstract
 {
     public interface IFlightService : IGenericService<Flight>
     {
+        public List<Flight> GetFlightsWithJoin();
+        public Flight GetFlightWithJoinById(int id);
+
     }
 }

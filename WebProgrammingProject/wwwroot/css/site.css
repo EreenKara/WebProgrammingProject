@@ -11,6 +11,9 @@ html {
   position: relative;
   min-height: 100%;
 }
+main[role="main"] {
+   
+}
 :root {
     --header-text-color: white;
     --label-flight-text-color: white;

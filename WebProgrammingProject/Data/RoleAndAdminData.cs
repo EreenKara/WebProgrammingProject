@@ -8,7 +8,7 @@ namespace WebProgrammingProject.Data
     {
         public static async Task InitializeAsync(IServiceProvider provider)
         {
-
+            // Normalde böyle bir şeyi koda gömmek saldırıya karşı açık hale getiriyor.
             var roleManager = provider.GetRequiredService<RoleManager<AppRole>>();
             var userManager = provider.GetRequiredService<UserManager<AppUser>>();
             var context = provider.GetRequiredService<AirLineContext>();

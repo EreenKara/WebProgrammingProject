@@ -1,0 +1,45 @@
+﻿@using WebProgrammingProject.ViewComponents.Models;
+ @model Flight
+
+
+<div class="ucus-genel">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ucus ID</th>
+                <th>KAlkis zamani</th>
+                <th>İniş zmaani</th>
+                <th>ÜCret</th>
+                <th>Bilet tipi</th>
+                <th>Airplane Model</th>
+                <th>NEreden</th>
+                <th>Nereye</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.ID</td>
+                <td>@Model.DepartureTime.ToShortDateString()</td>
+                <td>@Model.ArrivalTime.ToLongDateString()</td>
+                <td>@ViewBag.price</td>
+                <td>@ViewBag.flightType</td>
+                <td>@Model.Airplane.Model</td>
+                <td>@Model.DepartureAirport.City</td>
+                <td>@Model.ArrivalAirport.City</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>@TempData["Error"]</h3>
+<form asp-action="PassengerDetails" asp-controller="Passenger" method="post">
+    <div class="ucak">
+    
+        @await Component.InvokeAsync("Ucak",new UcakViewModel(){airplane=Model.Airplane,doluKoltuklar=ViewBag.takenSeats,flightType=ViewBag.flightType});
+        <input type="hidden" name="flightID" value="@Model.ID"/>
+        <input type="hidden" name="flightType" value="@ViewBag.flightType"/>
+        <input type="hidden" name="kacKisi" value="@ViewBag.kacKisi"/>
+        <input type="hidden" name="price" value="@ViewBag.price"/>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>

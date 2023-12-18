@@ -22,13 +22,12 @@ namespace EntityLayer.Concrete
         public double BusinessPrice { get; set; }
 
 
-        public ICollection<Ticket> Tickets { get; set; }
+        public ICollection<Ticket>? Tickets { get; set; }
 
 
         [ForeignKey(nameof(Airplane))]
         public int AirplaneID { get; set; }
         public Airplane Airplane { get; set; }
-
 
         [ForeignKey(nameof(DepartureAirport))]
         public int DepartureAirportID { get; set; } // FK ID  -> flightlocations

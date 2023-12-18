@@ -9,5 +9,8 @@ namespace DataAccessLayer.Abstract
 {
     public interface IFlightDal : IGenericDal<Flight>
     {
+        public List<Flight> GetFlightsWithJoin();
+        public Flight GetFlightWithJoinById(int id);
+        //public List<Flight> GetFlightsForBooking();
     }
 }

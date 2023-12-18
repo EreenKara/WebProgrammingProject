@@ -1,0 +1,40 @@
+﻿<h3>@TempData["Error"]</h3>
+
+<div>
+    <h1>Yapılabilecekler Airport</h1>
+    <h4>List Airports</h4>
+
+    <a asp-action="ListAirports" asp-controller="Airport" asp-area="Admins">List Airports</a>
+    <br />
+
+    <h4>Create Airport</h4>
+
+    <a asp-action="CreateAirport" asp-controller="Airport" asp-area="Admins">Create Airport</a>
+
+</div>
+<div>
+    <h1>Yapılabilecekler Airplane</h1>
+    <h4>List Airplane</h4>
+
+    <a asp-action="ListAirplanes" asp-controller="Airplane" asp-area="Admins">List Airplane</a>
+    <br />
+
+    <h4>Create Airplane</h4>
+
+    <a asp-action="CreateAirplane" asp-controller="Airplane" asp-area="Admins">Create Airplane</a>
+
+</div>
+<div>
+    <h1>Yapılabilecekler Flight</h1>
+    <h3>List Flight</h3>
+
+    <a class="btn btn-primary" asp-action="ListFlights" asp-controller="Flight" asp-area="Admins">List Flight</a>
+    <br />
+
+    <h3>Create Flight</h3>
+
+    <a class="btn btn-primary" asp-action="CreateFlight" asp-controller="Flight" asp-area="Admins">Create Flight</a>
+
+
+</div>
+

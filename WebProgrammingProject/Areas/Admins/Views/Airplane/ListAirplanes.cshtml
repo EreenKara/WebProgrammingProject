@@ -1,0 +1,51 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Airplane>
+
+<p>
+    <a asp-action="CreateAirplane">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RowSeatNumberEconomy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ColumnSeatNumberEconomy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RowSeatNumberBusiness)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ColumnSeatNumberBusiness)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RowSeatNumberEconomy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ColumnSeatNumberEconomy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RowSeatNumberBusiness)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ColumnSeatNumberBusiness)
+            </td>
+            <td>
+                <a asp-action="ShowAirplane" asp-route-id="@item.ID">Show Airplane</a> |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

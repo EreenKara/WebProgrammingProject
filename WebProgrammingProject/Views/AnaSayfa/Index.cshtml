@@ -19,7 +19,8 @@
                 </div>
 
                 <div id="OneWayDiv" class="secimDiv aktif">
-                    <partial name="~/Views/Shared/Partials/FormPartial.cshtml" />
+                    @await Component.InvokeAsync("Form");
+                    @*<partial name="~/Views/Shared/Partials/FormPartial.cshtml" />*@
                 </div>
                 <div id="RoundDiv" class="secimDiv pasif">
                     @*@{
@@ -36,11 +37,11 @@
     </section>
 </div>
 
-<partial name="../Shared/Partials/Ucaklar/UcakTemplatePartial.cshtml" />
 
 @*<partial name="~/Views/Shared/Partials/Ucaklar/A321NEOPartial.cshtml">
 <partial name="~/Views/Shared/Partials/Ucaklar/A350-900Partial.cshtml">
 <partial name="~/Views/Shared/Partials/Ucaklar/B737-800Partial.cshtml">*@
+@*<partial name="../Shared/Partials/Ucaklar/UcakTemplatePartial.cshtml" />*@
 
 @section Scripts{
         <script src="../Views/AnaSayfa/Index.cshtml.js"></script>
