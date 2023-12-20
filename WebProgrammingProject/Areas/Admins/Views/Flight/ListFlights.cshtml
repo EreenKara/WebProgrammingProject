@@ -26,7 +26,8 @@
                 <td>@ucus.ArrivalAirport.AirportCode</td>
                 <td>@ucus.DepartureTime</td>
                 <td>@ucus.ArrivalTime</td>
-                <td>
+                <td><a asp-action="DoluKoltuklar" asp-controller="Flight" asp-area="Admins" class="btn btn-primary" asp-route-flightID="@ucus.ID">Dolu Koltuklar</a></td>
+                @*<td>
                     <details>
                         <summary>Dolu Koltuklar</summary>
                         <div class="biletler">
@@ -39,7 +40,7 @@
                             }
                         </div>
                     </details>
-                </td>
+                </td>*@
             </tr>
         }
     </tbody>

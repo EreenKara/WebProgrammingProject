@@ -17,7 +17,7 @@ namespace WebProgrammingProject.Data
             {
                 string role1 = "Admin";
                 string role2 = "Member";
-                string password = "123123Aa.";
+                string password = "123123Aa."; // Bunları Environment Variable olarak eklemek gerek
                 if (await roleManager.FindByNameAsync(role1)==null)
                 {
                     await roleManager.CreateAsync(new AppRole() {Name=role1 });

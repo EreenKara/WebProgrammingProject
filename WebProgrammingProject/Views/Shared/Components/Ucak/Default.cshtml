@@ -42,7 +42,7 @@
                             {
                                 sutunNumarasi++;
                                 
-                                if(ViewBag.flightType=="business")
+                                if(ViewBag.flightType!= null && ViewBag.flightType=="business")
                                 {
                                     <li class="seat ">
                                         <p class="gri" name="@(siraNumarasi)@((char)(64+sutunNumarasi))" id="@(siraNumarasi)@((char)(64+sutunNumarasi))"></p>
@@ -97,7 +97,7 @@
                                     {
                                         sutunNumarasi++;
                                         
-                                        if(ViewBag.flightType=="economy")
+                                        if(ViewBag.flightType!= null &&ViewBag.flightType=="economy")
                                         {
                                             <li class="seat ">
                                                 <p class="gri" name="@(siraNumarasi)@((char)(64+sutunNumarasi))" id="@(siraNumarasi)@((char)(64+sutunNumarasi))"></p>

@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using System.Data;
 using WebProgrammingProject.Areas.Admins.Models;
 using WebProgrammingProject.Services;
+using WebProgrammingProject.ViewComponents.Models;
 
 namespace WebProgrammingProject.Areas.Admins.Controllers
 {
@@ -24,6 +25,25 @@ namespace WebProgrammingProject.Areas.Admins.Controllers
         public FlightController(LanguageService languageService)
         {
             this.languageService = languageService;
+        }
+
+
+        [HttpGet]
+        public IActionResult DoluKoltuklar(int flightID)
+        {
+            Flight ucus= flightManager.GetFlightWithJoinById(flightID);
+            List<string> takenSeats = new List<string>();
+            foreach (var ticket in ucus.Tickets)
+            {
+                takenSeats.Add(ticket.SeatNumber);
+            }
+            UcakViewModel ucakModel = new UcakViewModel()
+            {
+                airplane = ucus.Airplane,
+                doluKoltuklar = takenSeats,
+                flightType = null
+            };
+            return View(ucakModel);
         }
 
         [HttpGet]

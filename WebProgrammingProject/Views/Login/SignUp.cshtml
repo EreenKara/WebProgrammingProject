@@ -22,6 +22,9 @@
             <div class="form-icon">
                 <span><i class="icon icon-user"></i></span>
             </div>
+            <div class="text-danger" asp-validation-summary="ModelOnly">
+
+            </div>
             <div class="form-group">
                 <label asp-for="@Model.Adult.FirstName"></label>
                 <input class="form-control" style="border-radius: 20px;padding: 10px 20px;" asp-for="@Model.Adult.FirstName"/>
@@ -46,9 +49,6 @@
                 <label asp-for="@Model.Account.Password"></label>
                 <input class="form-control" type="password" style="border-radius: 20px;padding: 10px 20px;" asp-for="@Model.Account.Password"/>
                 <span class="text-danger" asp-validation-for="@Model.Account.Password"></span>
-            </div>
-            <div class="text-danger" asp-validation-summary="ModelOnly">
-
             </div>
             <div class="form-group">
                 <label asp-for="@Model.Account.ConfirmPassword"></label>
